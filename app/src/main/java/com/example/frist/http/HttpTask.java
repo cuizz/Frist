@@ -16,6 +16,7 @@ import com.squareup.okhttp.RequestBody;
 import com.squareup.okhttp.Response;
 
 import org.apache.commons.lang3.StringUtils;
+import org.greenrobot.eventbus.EventBus;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -134,7 +135,7 @@ public class HttpTask extends AsyncTask<Void,Void,String>  {
         super.onPostExecute(result);
         mpDialog.dismiss();
         Log.i("TAF",result);
-       // BusProvider.getInstance().post(new HttpEvent(mTag,result));
+       EventBus.getDefault().post(new HttpEvent(result,mTag));
 
     }
 

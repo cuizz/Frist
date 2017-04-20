@@ -47,5 +47,7 @@ dependencies {
     compile 'com.google.code.gson:gson:2.4'
     compile 'org.greenrobot:eventbus:3.0.0'
     compile 'org.apache.commons:commons-lang3:3.3.1'
+    //黏贴性头部
+    compile 'com.timehop.stickyheadersrecyclerview:library:0.4.3'
     compile files('libs/library.jar')
 }
