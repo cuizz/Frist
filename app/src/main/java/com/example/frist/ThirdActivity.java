@@ -19,6 +19,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.daimajia.swipe.SwipeLayout;
 import com.example.frist.adapter.RecycleAdapter;
 import com.example.frist.bean.OrderListResponse;
 import com.example.frist.http.HttpEvent;

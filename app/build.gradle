@@ -49,5 +49,7 @@ dependencies {
     compile 'org.apache.commons:commons-lang3:3.3.1'
     //黏贴性头部
     compile 'com.timehop.stickyheadersrecyclerview:library:0.4.3'
+    //侧滑删除
+    compile "com.daimajia.swipelayout:library:1.2.0@aar"
     compile files('libs/library.jar')
 }

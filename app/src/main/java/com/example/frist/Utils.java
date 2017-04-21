@@ -10,7 +10,7 @@ import java.security.NoSuchAlgorithmException;
 
 public class Utils {
     public static String URL="http://manager.sdelsq.net:8088/";
-    public static String IMG_URL="http://115.28.175.114/foods/upload/product/large/";
+    public static String IMG_URL="http://7xqai4.com2.z0.glb.qiniucdn.com/2016-03-14_56e64f25126fe.jpg?imageMogr2/thumbnail/460x460";
     public static String md5(String string) {
         byte[] hash;
         try {

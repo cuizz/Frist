@@ -7,7 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bumptech.glide.Glide;
+import com.daimajia.swipe.SwipeLayout;
 import com.example.frist.R;
+import com.example.frist.Utils;
 import com.example.frist.bean.OrderItem;
 
 import java.util.ArrayList;
@@ -101,6 +104,42 @@ public class HotelEntityAdapter extends SectionedRecyclerViewAdapter<HeaderHolde
     @Override
     protected void onBindItemViewHolder(DescHolder holder, int section, int position) {
         holder.descView.setText(allTagList.get(section).getGoodList().get(position).getTitle());
+        Glide.with(mContext).load(Utils.IMG_URL).into(holder.imageview);
+        SwipeLayout swipeLayout =  (SwipeLayout)holder.layout;
+        swipeLayout.setShowMode(SwipeLayout.ShowMode.PullOut);
+//add drag edge.(If the BottomView has 'layout_gravity' attribute, this line is unnecessary)
+        swipeLayout.addDrag(SwipeLayout.DragEdge.Left, holder.bommot);
+        swipeLayout.addSwipeListener(new SwipeLayout.SwipeListener() {
+            @Override
+            public void onClose(SwipeLayout layout) {
+                //when the SurfaceView totally cover the BottomView.
+            }
 
+            @Override
+            public void onUpdate(SwipeLayout layout, int leftOffset, int topOffset) {
+                //you are swiping.
+            }
+
+            @Override
+            public void onStartOpen(SwipeLayout layout) {
+
+            }
+
+            @Override
+            public void onOpen(SwipeLayout layout) {
+                //when the BottomView totally show.
+              //  YoYo.with(Techniques.Tada).duration(500).delay(100).playOn(layout.findViewById(R.id.trash));
+            }
+
+            @Override
+            public void onStartClose(SwipeLayout layout) {
+
+            }
+
+            @Override
+            public void onHandRelease(SwipeLayout layout, float xvel, float yvel) {
+                //when user's hand released.
+            }
+        });
     }
 }
