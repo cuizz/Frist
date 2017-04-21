@@ -1,5 +1,10 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'org.greenrobot.greendao' // apply plugin
+greendao {
+    schemaVersion 1
+    daoPackage 'com.wyk.greendaodemo.greendao.gen'
+    targetGenDir 'src/main/java'
+}
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
@@ -51,5 +56,8 @@ dependencies {
     compile 'com.timehop.stickyheadersrecyclerview:library:0.4.3'
     //侧滑删除
     compile "com.daimajia.swipelayout:library:1.2.0@aar"
+    //greendao数据库
+    compile 'org.greenrobot:greendao:3.2.2' // add library
+
     compile files('libs/library.jar')
 }

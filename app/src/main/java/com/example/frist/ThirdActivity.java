@@ -3,7 +3,6 @@ package com.example.frist;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -11,29 +10,18 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.daimajia.swipe.SwipeLayout;
-import com.example.frist.adapter.RecycleAdapter;
 import com.example.frist.bean.OrderListResponse;
 import com.example.frist.http.HttpEvent;
 import com.example.frist.http.HttpTask;
 import com.example.frist.section.HotelEntityAdapter;
 import com.example.frist.section.SectionedSpanSizeLookup;
 import com.google.gson.Gson;
-import com.lidroid.xutils.HttpUtils;
-import com.lidroid.xutils.exception.HttpException;
-import com.lidroid.xutils.http.RequestParams;
-import com.lidroid.xutils.http.ResponseInfo;
-import com.lidroid.xutils.http.callback.RequestCallBack;
-import com.lidroid.xutils.http.client.HttpRequest;
-import com.lidroid.xutils.http.client.HttpRequest.HttpMethod;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -141,52 +129,7 @@ public class ThirdActivity extends AppCompatActivity {
     private String think_ucenter_md5(String str, String key) {
         return Utils.md5(Utils.sha1(str) + key);
     }
-    class Halflisttask2 extends AsyncTask<String, String, String> {
 
-        @Override
-        protected String doInBackground(String... params) {
-            String url=params[0];
-            try {
-                PackageManager packageManager = getPackageManager();
-                PackageInfo packInfo = null;
-                String appVersion = "";
-                try {
-                    packInfo = packageManager.getPackageInfo(getPackageName(), 0);
-                    appVersion = packInfo.versionName;
-                } catch (PackageManager.NameNotFoundException e) {
-                    appVersion = "";
-                    e.printStackTrace();
-                }
-                String device = "ANDROID_" + android.os.Build.MODEL;
-                String releaseVersion = "ANDROID_"
-                        + android.os.Build.VERSION.RELEASE;
-                HttpUtils httpUtils=new HttpUtils();
-                RequestParams requestParams=new RequestParams();
-                requestParams.addBodyParameter("osversion",releaseVersion);
-                requestParams.addBodyParameter("device",device);
-                requestParams.addBodyParameter("appversion",appVersion);
-                requestParams.addBodyParameter("name","13964157950");
-                requestParams.addBodyParameter("pwd",think_ucenter_md5("123456", UC_AUTH_KEY));
-                httpUtils.send(HttpMethod.POST, url, requestParams,new RequestCallBack<String>() {
-
-                    @Override
-                    public void onFailure(HttpException arg0, String arg1) {
-
-
-                    }
-                    @Override
-                    public void onSuccess(ResponseInfo<String> arg0) {
-                        String response=arg0.result;
-                        Log.i("sssss",response);
-                    }
-                });
-            } catch (Exception e) {
-
-                e.printStackTrace();
-            }
-            return null;
-        }
-    }
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEventMainThread(HttpEvent event) {
         switch (event.getTsg()){
