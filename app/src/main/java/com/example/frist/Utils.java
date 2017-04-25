@@ -1,5 +1,9 @@
 package com.example.frist;
 
+import android.os.Environment;
+import android.text.TextUtils;
+
+import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -56,5 +60,23 @@ public class Utils {
             }
         }
         return sb.toString();
+    }
+    public static String getDBPath() {
+        String sdCardPath = getSDPath();
+        if (TextUtils.isEmpty(sdCardPath)) {
+            return "";
+        } else {
+            return sdCardPath + File.separator + "GreenDao"
+                    + File.separator + "sqlite";
+        }
+    }
+    public static String getSDPath() {
+        boolean sdCardExist = Environment.getExternalStorageState().equals(
+                Environment.MEDIA_MOUNTED);
+        if (sdCardExist) {
+            return Environment.getExternalStorageDirectory().toString();
+        } else {
+            return "";
+        }
     }
 }

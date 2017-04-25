@@ -1,10 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'org.greenrobot.greendao' // apply plugin
-greendao {
-    schemaVersion 1
-    daoPackage 'com.wyk.greendaodemo.greendao.gen'
-    targetGenDir 'src/main/java'
-}
+
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
@@ -21,6 +17,11 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    greendao {
+        schemaVersion 2
+        daoPackage 'com.example.frist.greendao.gen'
+        targetGenDir 'src/main/java'
     }
 }
 repositories {
