@@ -28,8 +28,9 @@ public class StudentDao extends AbstractDao<Student, Long> {
      */
     public static class Properties {
         public final static Property Id = new Property(0, long.class, "id", true, "_id");
-        public final static Property Name = new Property(1, String.class, "name", false, "sex");
-        public final static Property StuId = new Property(2, long.class, "stuId", false, "STU_ID");
+        public final static Property Name = new Property(1, String.class, "name", false, "NAME");
+        public final static Property Year = new Property(2, String.class, "year", false, "YEAR");
+        public final static Property StuId = new Property(3, long.class, "stuId", false, "STU_ID");
     }
 
     private Query<Student> teacher_StudentsQuery;
@@ -46,9 +47,10 @@ public class StudentDao extends AbstractDao<Student, Long> {
     public static void createTable(Database db, boolean ifNotExists) {
         String constraint = ifNotExists? "IF NOT EXISTS ": "";
         db.execSQL("CREATE TABLE " + constraint + "\"STUDENT\" (" + //
-                "\"_id\" INTEGER PRIMARY KEY NOT NULL ," + // 0: id
-                "\"sex\" TEXT," + // 1: name
-                "\"STU_ID\" INTEGER NOT NULL );"); // 2: stuId
+                "\"_id\" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL ," + // 0: id
+                "\"NAME\" TEXT," + // 1: name
+                "\"YEAR\" TEXT," + // 2: year
+                "\"STU_ID\" INTEGER NOT NULL );"); // 3: stuId
     }
 
     /** Drops the underlying database table. */
@@ -66,7 +68,12 @@ public class StudentDao extends AbstractDao<Student, Long> {
         if (name != null) {
             stmt.bindString(2, name);
         }
-        stmt.bindLong(3, entity.getStuId());
+ 
+        String year = entity.getYear();
+        if (year != null) {
+            stmt.bindString(3, year);
+        }
+        stmt.bindLong(4, entity.getStuId());
     }
 
     @Override
@@ -78,7 +85,12 @@ public class StudentDao extends AbstractDao<Student, Long> {
         if (name != null) {
             stmt.bindString(2, name);
         }
-        stmt.bindLong(3, entity.getStuId());
+ 
+        String year = entity.getYear();
+        if (year != null) {
+            stmt.bindString(3, year);
+        }
+        stmt.bindLong(4, entity.getStuId());
     }
 
     @Override
@@ -91,7 +103,8 @@ public class StudentDao extends AbstractDao<Student, Long> {
         Student entity = new Student( //
             cursor.getLong(offset + 0), // id
             cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1), // name
-            cursor.getLong(offset + 2) // stuId
+            cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2), // year
+            cursor.getLong(offset + 3) // stuId
         );
         return entity;
     }
@@ -100,7 +113,8 @@ public class StudentDao extends AbstractDao<Student, Long> {
     public void readEntity(Cursor cursor, Student entity, int offset) {
         entity.setId(cursor.getLong(offset + 0));
         entity.setName(cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1));
-        entity.setStuId(cursor.getLong(offset + 2));
+        entity.setYear(cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2));
+        entity.setStuId(cursor.getLong(offset + 3));
      }
     
     @Override

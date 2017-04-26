@@ -17,10 +17,10 @@ import com.example.frist.greendao.gen.TeacherDao;
  */
 @Entity
 public class Teacher {
-    @Id
+    @Id(autoincrement = true)
     private long id;
-    @Property(nameInDb = "sex")
     private String name;
+    private String sex;
     @ToMany(referencedJoinProperty = "stuId")
     List<Student>students;
     /** Used to resolve relations */
@@ -29,10 +29,11 @@ public class Teacher {
     /** Used for active entity operations. */
     @Generated(hash = 648119699)
     private transient TeacherDao myDao;
-    @Generated(hash = 1477850635)
-    public Teacher(long id, String name) {
+    @Generated(hash = 557153032)
+    public Teacher(long id, String name, String sex) {
         this.id = id;
         this.name = name;
+        this.sex = sex;
     }
     @Generated(hash = 1630413260)
     public Teacher() {
@@ -113,5 +114,11 @@ public class Teacher {
     public void __setDaoSession(DaoSession daoSession) {
         this.daoSession = daoSession;
         myDao = daoSession != null ? daoSession.getTeacherDao() : null;
+    }
+    public String getSex() {
+        return this.sex;
+    }
+    public void setSex(String sex) {
+        this.sex = sex;
     }
 }

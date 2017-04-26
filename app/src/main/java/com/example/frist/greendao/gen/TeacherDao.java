@@ -25,7 +25,8 @@ public class TeacherDao extends AbstractDao<Teacher, Long> {
      */
     public static class Properties {
         public final static Property Id = new Property(0, long.class, "id", true, "_id");
-        public final static Property Name = new Property(1, String.class, "name", false, "sex");
+        public final static Property Name = new Property(1, String.class, "name", false, "NAME");
+        public final static Property Sex = new Property(2, String.class, "sex", false, "SEX");
     }
 
     private DaoSession daoSession;
@@ -44,8 +45,9 @@ public class TeacherDao extends AbstractDao<Teacher, Long> {
     public static void createTable(Database db, boolean ifNotExists) {
         String constraint = ifNotExists? "IF NOT EXISTS ": "";
         db.execSQL("CREATE TABLE " + constraint + "\"TEACHER\" (" + //
-                "\"_id\" INTEGER PRIMARY KEY NOT NULL ," + // 0: id
-                "\"sex\" TEXT);"); // 1: name
+                "\"_id\" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL ," + // 0: id
+                "\"NAME\" TEXT," + // 1: name
+                "\"SEX\" TEXT);"); // 2: sex
     }
 
     /** Drops the underlying database table. */
@@ -63,6 +65,11 @@ public class TeacherDao extends AbstractDao<Teacher, Long> {
         if (name != null) {
             stmt.bindString(2, name);
         }
+ 
+        String sex = entity.getSex();
+        if (sex != null) {
+            stmt.bindString(3, sex);
+        }
     }
 
     @Override
@@ -73,6 +80,11 @@ public class TeacherDao extends AbstractDao<Teacher, Long> {
         String name = entity.getName();
         if (name != null) {
             stmt.bindString(2, name);
+        }
+ 
+        String sex = entity.getSex();
+        if (sex != null) {
+            stmt.bindString(3, sex);
         }
     }
 
@@ -91,7 +103,8 @@ public class TeacherDao extends AbstractDao<Teacher, Long> {
     public Teacher readEntity(Cursor cursor, int offset) {
         Teacher entity = new Teacher( //
             cursor.getLong(offset + 0), // id
-            cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1) // name
+            cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1), // name
+            cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2) // sex
         );
         return entity;
     }
@@ -100,6 +113,7 @@ public class TeacherDao extends AbstractDao<Teacher, Long> {
     public void readEntity(Cursor cursor, Teacher entity, int offset) {
         entity.setId(cursor.getLong(offset + 0));
         entity.setName(cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1));
+        entity.setSex(cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2));
      }
     
     @Override

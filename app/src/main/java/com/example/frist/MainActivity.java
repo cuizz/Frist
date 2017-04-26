@@ -37,27 +37,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         // requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.first_layout);
-       /* List<Student>list=new ArrayList<Student>();
-        for(int i=0;i<9;i++){
-            Student student=new Student();
-           student.setId(Long.valueOf(i));
-         student.setName("xuesheng"+i);
-           if(i%2==1){
-                student.setStuId(1L);
-           }else{
-               student.setStuId(2L);
-           }
-           list.add(student);
-        }
-        GreenDaoManager.getInstance().getSession().getStudentDao().insertInTx(list);*/
-       // Teacher teacher=new Teacher(1L,"小名");
-       // Teacher teachers=new Teacher(2L,"小红");
-        //GreenDaoManager.getInstance().getSession().getTeacherDao().insert(teacher);
-        //GreenDaoManager.getInstance().getSession().getTeacherDao().insert(teachers);
-        List<Student> sss=GreenDaoManager.getInstance().getSession().getStudentDao().loadAll();
-        int ssssss=sss.size();
-       Log.i("TAG",ssssss+"");
-
+       // List<Student>list=GreenDaoManager.getInstance().getSession().getStudentDao().loadAll();
+       // for(int i=0;i<list.size();i++){
+        //    Student student=list.get(i);
+        // student.setYear(i+15+"");
+           // student.setId(Long.valueOf(i)+1L);
+          // list.add(student);
+       // }
+       // GreenDaoManager.getInstance().getSession().getStudentDao().updateInTx(list);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         button=(FloatingActionButton)findViewById(R.id.button);
         CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.coll_toolbar);
