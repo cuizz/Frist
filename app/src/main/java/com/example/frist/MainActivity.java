@@ -1,6 +1,7 @@
 package com.example.frist;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -11,9 +12,13 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.frist.bean.Student;
 import com.example.frist.bean.Teacher;
@@ -27,26 +32,80 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindBitmap;
+import butterknife.BindColor;
+import butterknife.BindString;
+import butterknife.BindView;
+import butterknife.BindViews;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+import butterknife.OnLongClick;
+
 public class MainActivity extends AppCompatActivity {
     SwipeRefreshLayout swipeRefreshLayout;
+    @BindBitmap(R.mipmap.xxxxxx)
+    Bitmap bitmap;
+    @BindString(R.string.butter_knife)
+    String butter_knife;
+    @BindColor(R.color.kenife)
+    int red;
+    @BindView(R.id.textview)
     TextView textView;
+    @BindView(R.id.button)
     FloatingActionButton button;
+
+    @OnClick(R.id.button)
+    public void onclick(View view) {
+        Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+        MainActivity.this.startActivity(intent);
+    }
+
+    @BindViews({R.id.knife1, R.id.knife2, R.id.knife3})
+    public List<Button> listButton;
+    @OnLongClick(R.id.knife2)
+    public boolean longClick(View view){
+        view.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+        return true;
+    }
+    @OnClick({R.id.knife1, R.id.knife2, R.id.knife3})
+    public void onClicks(View view) {
+        switch (view.getId()) {
+            case R.id.knife1:
+                Toast toast=Toast.makeText(this, "knife1", Toast.LENGTH_SHORT);
+                View views=LayoutInflater.from(MainActivity.this).inflate(R.layout.toast_view,null);
+                TextView tv=(TextView) views.findViewById(R.id.toast_textview);
+                tv.setText("自定义toast");
+                toast.setView(views);
+                toast.setGravity(Gravity.CENTER,0,0);
+                toast.show();
+                for (Button btn : listButton) {
+                    btn.setBackgroundColor(red);
+                    btn.setTextColor(getResources().getColor(R.color.colorPrimary));
+                }
+                break;
+            case R.id.knife2:
+                Toast.makeText(this, "knife2", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.knife3:
+                Toast.makeText(this, "knife3", Toast.LENGTH_SHORT).show();
+                break;
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.first_layout);
-       // List<Student>list=GreenDaoManager.getInstance().getSession().getStudentDao().loadAll();
-       // for(int i=0;i<list.size();i++){
+        ButterKnife.bind(this);
+        // List<Student>list=GreenDaoManager.getInstance().getSession().getStudentDao().loadAll();
+        // for(int i=0;i<list.size();i++){
         //    Student student=list.get(i);
         // student.setYear(i+15+"");
-           // student.setId(Long.valueOf(i)+1L);
-          // list.add(student);
-       // }
-       // GreenDaoManager.getInstance().getSession().getStudentDao().updateInTx(list);
+        // student.setId(Long.valueOf(i)+1L);
+        // list.add(student);
+        // }
+        // GreenDaoManager.getInstance().getSession().getStudentDao().updateInTx(list);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        button=(FloatingActionButton)findViewById(R.id.button);
         CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.coll_toolbar);
         ImageView imageView = (ImageView) findViewById(R.id.imageview);
         swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.refresh);
@@ -80,14 +139,13 @@ public class MainActivity extends AppCompatActivity {
                 }).start();
             }
         });
-        textView = (TextView) findViewById(R.id.textview);
         setSupportActionBar(toolbar);
-        toolbar.setNavigationIcon(getResources().getDrawable(R.drawable.common_google_signin_btn_icon_dark));
+        toolbar.setNavigationIcon(getResources().getDrawable(R.mipmap.for_return));
         //toolbar.setLogo(getResources().getDrawable(R.drawable.common_google_signin_btn_icon_dark));
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this,ThirdActivity.class);
+                Intent intent = new Intent(MainActivity.this, ThirdActivity.class);
                 MainActivity.this.startActivity(intent);
             }
         });
@@ -97,15 +155,8 @@ public class MainActivity extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(false);
         }
 
-        collapsingToolbarLayout.setTitle("水果");
+        collapsingToolbarLayout.setTitle(butter_knife);
         textView.setText(getStrings("nima"));
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this,SecondActivity.class);
-                MainActivity.this.startActivity(intent);
-            }
-        });
     }
 
     private String getStrings(String str) {

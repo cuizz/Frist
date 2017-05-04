@@ -69,8 +69,7 @@
                 android:background="#0f0"
                 app:tabIndicatorColor="#00f"
                 app:tabSelectedTextColor="#f00"
-                app:tabTextColor="#fff"
-                app:tabMode="scrollable"/>
+                app:tabTextColor="#fff" />
             </LinearLayout>
         </android.support.design.widget.AppBarLayout>
 
