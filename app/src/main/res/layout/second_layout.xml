@@ -36,7 +36,7 @@
                 <FrameLayout
                     android:id="@+id/userScroreRe"
                     android:layout_width="match_parent"
-                    android:layout_height="240dp"
+                    android:layout_height="180dp"
                     app:layout_scrollFlags="enterAlwaysCollapsed">
                     <android.support.v4.view.LoopViewPager
                         android:id="@+id/pager"

@@ -14,6 +14,8 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -157,6 +159,27 @@ public class MainActivity extends AppCompatActivity {
 
         collapsingToolbarLayout.setTitle(butter_knife);
         textView.setText(getStrings("nima"));
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.menu1:
+                      Intent intent=new Intent(MainActivity.this,SwipeLayoutActivity.class);
+                       MainActivity.this.startActivity(intent);
+                        break;
+                    case R.id.menu2:
+
+                        break;
+                    case R.id.menu3:
+
+                        break;
+                    case R.id.menu4:
+
+                        break;
+                }
+                return true;
+            }
+        });
     }
 
     private String getStrings(String str) {
@@ -167,4 +190,9 @@ public class MainActivity extends AppCompatActivity {
         return stringBuilder.toString();
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu); //解析menu布局文件到menu
+        return super.onCreateOptionsMenu(menu);
+    }
 }

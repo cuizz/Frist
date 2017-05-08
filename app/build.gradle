@@ -20,9 +20,9 @@ android {
         }
     }
     greendao {
-        schemaVersion 4
+        schemaVersion 5
         daoPackage 'com.example.frist.greendao.gen'
-        targetGenDir 'src/main/java'
+        targetGenDir 'src/menu/java'
     }
 }
 repositories {
@@ -64,5 +64,7 @@ dependencies {
     //注解
     compile 'com.jakewharton:butterknife:8.5.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+    //圆形的imageview
+    compile 'de.hdodenhof:circleimageview:2.1.0'
     compile files('libs/library.jar')
 }
