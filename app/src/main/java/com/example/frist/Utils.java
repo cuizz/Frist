@@ -1,7 +1,12 @@
 package com.example.frist;
 
+import android.app.AlertDialog;
+import android.content.Context;
 import android.os.Environment;
 import android.text.TextUtils;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.TextView;
 
 import java.io.File;
 import java.io.UnsupportedEncodingException;
@@ -13,8 +18,36 @@ import java.security.NoSuchAlgorithmException;
  */
 
 public class Utils {
+    public static AlertDialog dialog;
+    public static AlertDialog.Builder normalDialog;
     public static String URL="http://manager.sdelsq.net:8088/";
     public static String IMG_URL="http://7xqai4.com2.z0.glb.qiniucdn.com/2016-03-14_56e64f25126fe.jpg?imageMogr2/thumbnail/460x460";
+    public static void creatDialog(Context context,String content){
+        normalDialog =
+                new AlertDialog.Builder(context);
+        View view = LayoutInflater.from(context).inflate(R.layout.dialog,null);
+        normalDialog.setView(view);
+        TextView pos=(TextView)view.findViewById(R.id.quxiao) ;
+        TextView sure=(TextView)view.findViewById(R.id.sure) ;
+        pos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dismissDialog();
+            }
+        });
+        sure.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dismissDialog();
+            }
+        });
+      dialog= normalDialog.show();
+    }
+    public static void dismissDialog(){
+        if(dialog!=null){
+            dialog.dismiss();
+        }
+    }
     public static String md5(String string) {
         byte[] hash;
         try {

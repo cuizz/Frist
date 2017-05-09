@@ -1,6 +1,5 @@
 package com.example.frist;
 
-import android.app.DownloadManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,7 +11,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,17 +26,13 @@ import com.daimajia.swipe.SimpleSwipeListener;
 import com.daimajia.swipe.SwipeLayout;
 import com.daimajia.swipe.adapters.RecyclerSwipeAdapter;
 import com.daimajia.swipe.implments.SwipeItemRecyclerMangerImpl;
-import com.example.frist.bean.OrderItem;
 import com.example.frist.bean.Student;
-import com.example.frist.bean.User;
 import com.example.frist.greendao.gen.StudentDao;
 import com.example.frist.util.GreenDaoManager;
 
-import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.greendao.query.Query;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class SwipeLayoutActivity extends AppCompatActivity {
     SwipeRefreshLayout swipeRefreshLayout;
@@ -120,10 +114,17 @@ public class SwipeLayoutActivity extends AppCompatActivity {
                 textViewData = (TextView) itemView.findViewById(R.id.tv_desc);
                // buttonDelete = (Button) itemView.findViewById(R.id.delete);
                 image=(ImageView) itemView.findViewById(R.id.leftimage) ;
-                itemView.setOnClickListener(new View.OnClickListener() {
+                swipeLayout.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Toast.makeText(view.getContext(), "onItemSelected: " + textViewData.getText().toString(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(view.getContext(), "hahhah", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                swipeLayout.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View v) {
+                        Utils.creatDialog(SwipeLayoutActivity.this,"");
+                        return false;
                     }
                 });
             }
