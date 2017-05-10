@@ -168,7 +168,8 @@ public class MainActivity extends AppCompatActivity {
                        MainActivity.this.startActivity(intent);
                         break;
                     case R.id.menu2:
-
+                        Intent intents=new Intent(MainActivity.this,WebActivity.class);
+                        MainActivity.this.startActivity(intents);
                         break;
                     case R.id.menu3:
 
