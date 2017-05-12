@@ -20,15 +20,16 @@ import java.security.NoSuchAlgorithmException;
 public class Utils {
     public static AlertDialog dialog;
     public static AlertDialog.Builder normalDialog;
-    public static String URL="http://manager.sdelsq.net:8088/";
-    public static String IMG_URL="http://7xqai4.com2.z0.glb.qiniucdn.com/2016-03-14_56e64f25126fe.jpg?imageMogr2/thumbnail/460x460";
-    public static void creatDialog(Context context,String content){
+    public static String URL = "http://manager.sdelsq.net:8088/";
+    public static String IMG_URL = "http://7xqai4.com2.z0.glb.qiniucdn.com/2016-03-14_56e64f25126fe.jpg?imageMogr2/thumbnail/460x460";
+
+    public static void creatDialog(Context context, String content) {
         normalDialog =
                 new AlertDialog.Builder(context);
-        View view = LayoutInflater.from(context).inflate(R.layout.dialog,null);
+        View view = LayoutInflater.from(context).inflate(R.layout.dialog, null);
         normalDialog.setView(view);
-        TextView pos=(TextView)view.findViewById(R.id.quxiao) ;
-        TextView sure=(TextView)view.findViewById(R.id.sure) ;
+        TextView pos = (TextView) view.findViewById(R.id.quxiao);
+        TextView sure = (TextView) view.findViewById(R.id.sure);
         pos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,13 +42,15 @@ public class Utils {
                 dismissDialog();
             }
         });
-      dialog= normalDialog.show();
+        dialog = normalDialog.show();
     }
-    public static void dismissDialog(){
-        if(dialog!=null){
+
+    public static void dismissDialog() {
+        if (dialog != null) {
             dialog.dismiss();
         }
     }
+
     public static String md5(String string) {
         byte[] hash;
         try {
@@ -78,6 +81,7 @@ public class Utils {
         }
         return "";
     }
+
     public static String toHexString(byte[] keyData) {
         if (keyData == null) {
             return null;
@@ -94,6 +98,7 @@ public class Utils {
         }
         return sb.toString();
     }
+
     public static String getDBPath() {
         String sdCardPath = getSDPath();
         if (TextUtils.isEmpty(sdCardPath)) {
@@ -103,6 +108,7 @@ public class Utils {
                     + File.separator + "sqlite";
         }
     }
+
     public static String getSDPath() {
         boolean sdCardExist = Environment.getExternalStorageState().equals(
                 Environment.MEDIA_MOUNTED);

@@ -172,7 +172,8 @@ public class MainActivity extends AppCompatActivity {
                         MainActivity.this.startActivity(intents);
                         break;
                     case R.id.menu3:
-
+                        Intent intentss=new Intent(MainActivity.this,TabActivity.class);
+                        MainActivity.this.startActivity(intentss);
                         break;
                     case R.id.menu4:
 

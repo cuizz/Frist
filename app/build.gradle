@@ -66,5 +66,7 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
     //圆形的imageview
     compile 'de.hdodenhof:circleimageview:2.1.0'
+    //图片的轮播
+    compile 'com.youth.banner:banner:1.4.9'
     compile files('libs/library.jar')
 }

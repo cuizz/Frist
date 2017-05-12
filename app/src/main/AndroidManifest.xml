@@ -33,6 +33,8 @@
             android:theme="@style/FuTheme"></activity>
         <activity
             android:name=".WebActivity"
+            android:theme="@style/FuTheme"></activity> <activity
+            android:name=".TabActivity"
             android:theme="@style/FuTheme"></activity>
         <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->

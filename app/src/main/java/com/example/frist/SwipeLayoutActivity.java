@@ -77,7 +77,7 @@ public class SwipeLayoutActivity extends AppCompatActivity {
             }
         });
         Query query=GreenDaoManager.getInstance().getSession().getStudentDao().queryBuilder().
-                where(StudentDao.Properties.Year.between(15,19), StudentDao.Properties.StuId.eq(1)).build();
+                where(StudentDao.Properties.Year.between(15,22), StudentDao.Properties.StuId.eq(1)).build();
         students=(ArrayList<Student>) query.list();
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
        // recyclerView.setItemAnimator(new FadeInLeftAnimator());
@@ -117,7 +117,7 @@ public class SwipeLayoutActivity extends AppCompatActivity {
                 swipeLayout.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Toast.makeText(view.getContext(), "hahhah", Toast.LENGTH_SHORT).show();
+                       // Toast.makeText(view.getContext(), "hahhah", Toast.LENGTH_SHORT).show();
                     }
                 });
                 swipeLayout.setOnLongClickListener(new View.OnLongClickListener() {

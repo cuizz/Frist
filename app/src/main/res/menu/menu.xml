@@ -5,7 +5,8 @@
         android:id="@+id/menu1"
         android:title="android"
         android:icon="@drawable/icon"
-        app:showAsAction="never"></item>
+        app:showAsAction="never"
+        ></item>
     <item
         android:id="@+id/menu2"
         android:title="java"

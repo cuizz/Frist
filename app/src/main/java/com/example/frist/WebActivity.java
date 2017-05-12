@@ -39,6 +39,7 @@ public class WebActivity extends AppCompatActivity {
         webview.getSettings().setJavaScriptEnabled(true);
         //自适应屏幕
         webview.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
+        //webview.getSettings().setUseWideViewPort(true);
         webview.getSettings().setLoadWithOverviewMode(true);
         webview.setWebChromeClient(new WebChromeClient() {
             @Override
