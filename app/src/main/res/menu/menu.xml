@@ -3,25 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/menu1"
-        android:title="android"
+        android:title="swipeLayout"
         android:icon="@drawable/icon"
-        app:showAsAction="never"
+        app:showAsAction="never|withText"
         ></item>
     <item
         android:id="@+id/menu2"
-        android:title="java"
+        android:title="webView"
         android:icon="@drawable/icon"
-        app:showAsAction="never">
+        app:showAsAction="never|withText">
     </item>
     <item
         android:id="@+id/menu3"
-        android:title="html"
+        android:title="tabLayout"
         android:icon="@drawable/icon"
-        app:showAsAction="never"></item>
+        app:showAsAction="never|withText"></item>
     <item
         android:id="@+id/menu4"
         android:title="js"
         android:icon="@drawable/icon"
-        app:showAsAction="never"></item>
+        app:showAsAction="never|withText"></item>
 
 </menu>

@@ -12,6 +12,8 @@ import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Administrator on 2017/4/13.
@@ -22,7 +24,6 @@ public class Utils {
     public static AlertDialog.Builder normalDialog;
     public static String URL = "http://manager.sdelsq.net:8088/";
     public static String IMG_URL = "http://7xqai4.com2.z0.glb.qiniucdn.com/2016-03-14_56e64f25126fe.jpg?imageMogr2/thumbnail/460x460";
-
     public static void creatDialog(Context context, String content) {
         normalDialog =
                 new AlertDialog.Builder(context);
@@ -117,5 +118,16 @@ public class Utils {
         } else {
             return "";
         }
+    }
+    public static List<String> getlist(){
+        List<String> images=new ArrayList<>();
+        if(images==null||images.size()==0){
+            images.add("http://img.my.csdn.net/uploads/201309/01/1378037235_3453.jpg");
+            images.add("http://img.my.csdn.net/uploads/201309/01/1378037235_7476.jpg");
+            images.add("http://img.my.csdn.net/uploads/201309/01/1378037235_9280.jpg");
+            images.add("http://img.my.csdn.net/uploads/201309/01/1378037234_3539.jpg");
+            images.add("http://img.my.csdn.net/uploads/201309/01/1378037234_6318.jpg");
+        }
+        return images;
     }
 }

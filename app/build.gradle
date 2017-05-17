@@ -68,5 +68,7 @@ dependencies {
     compile 'de.hdodenhof:circleimageview:2.1.0'
     //图片的轮播
     compile 'com.youth.banner:banner:1.4.9'
+    //封装的PopupWindow
+    compile 'com.github.razerdp:BasePopup:v1.7.1'
     compile files('libs/library.jar')
 }

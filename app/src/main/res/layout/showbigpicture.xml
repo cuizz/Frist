@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?><!--android:background="#ffffff"--><!-- 第一部分:CoordinatorLayout -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollview"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="#f8000000"
+    android:gravity="center"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:id="@+id/scaleAnim"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:fitsSystemWindows="true">
+
+            <com.youth.banner.Banner
+                android:id="@+id/banner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true" />
+    </LinearLayout>
+
+</LinearLayout>

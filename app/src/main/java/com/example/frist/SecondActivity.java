@@ -5,19 +5,14 @@ import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
-
 
 import com.bumptech.glide.Glide;
 import com.example.frist.fragment.TabFragment;
 import com.example.frist.fragment.TabFragment1;
 import com.example.frist.fragment.TabFragment2;
-import com.example.frist.fragment.TabFragment3;
-import com.example.frist.fragment.TabFragment4;
 import com.example.frist.view.WrapContentHeightViewPager;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
@@ -57,7 +52,13 @@ public class SecondActivity extends AppCompatActivity {
         title.add("android");
         title.add("html");
         for(int i=0;i<title.size();i++){
-              fragments.add(new TabFragment());
+            if(i==0){
+                fragments.add(new TabFragment());
+            }else if(i==1){
+                fragments.add(new TabFragment1());
+            }else if(i==2){
+                fragments.add(new TabFragment2());
+            }
         }
         //设置图片加载器
         banner.setImageLoader(new GlideImageLoader());
@@ -74,7 +75,7 @@ public class SecondActivity extends AppCompatActivity {
         banner.start();
         viewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager(),fragments,title));
        tableLayout.setupWithViewPager(viewPager);
-        tableLayout.setTabsFromPagerAdapter(new ViewPagerAdapter(getSupportFragmentManager(),fragments,title));
+        //tableLayout.setTabsFromPagerAdapter(new ViewPagerAdapter(getSupportFragmentManager(),fragments,title));
     }
 
      class GlideImageLoader extends ImageLoader {

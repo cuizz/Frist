@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?><!--android:background="#ffffff"--><!-- 第一部分:CoordinatorLayout -->
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/scrollview"
     android:layout_width="fill_parent"
@@ -61,6 +62,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
+        android:scrollbars="none"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <com.example.frist.view.WrapContentHeightViewPager

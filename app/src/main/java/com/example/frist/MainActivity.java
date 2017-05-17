@@ -9,6 +9,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.view.menu.MenuBuilder;
 import android.support.v7.widget.Toolbar;
 
 import android.util.Log;
@@ -17,8 +18,11 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,11 +30,15 @@ import com.example.frist.bean.Student;
 import com.example.frist.bean.Teacher;
 import com.example.frist.bean.User;
 import com.example.frist.util.GreenDaoManager;
+import com.example.frist.view.AutoPopwindow;
+import com.example.frist.view.FromBottomPopwindow;
+import com.example.frist.view.ScalePopwindow;
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.appindexing.Thing;
 import com.google.android.gms.common.api.GoogleApiClient;
 
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -80,16 +88,22 @@ public class MainActivity extends AppCompatActivity {
                 toast.setView(views);
                 toast.setGravity(Gravity.CENTER,0,0);
                 toast.show();
-                for (Button btn : listButton) {
-                    btn.setBackgroundColor(red);
-                    btn.setTextColor(getResources().getColor(R.color.colorPrimary));
-                }
+                AutoPopwindow autoPopwindow=new AutoPopwindow(this);
+                View view1=autoPopwindow.getPopupWindowView();
+                LinearLayout v = (LinearLayout) view1.findViewById(R.id.popup_contianer);
+                // int width = getScreenWidth() / 3-10;
+                 //int height = getPopupViewHeight();
+                 RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(150, 150);
+                v.setLayoutParams(params);
+                autoPopwindow.showPopupWindow(view);
                 break;
             case R.id.knife2:
-                Toast.makeText(this, "knife2", Toast.LENGTH_SHORT).show();
+                FromBottomPopwindow bottomPopwindow=new FromBottomPopwindow(this);
+                bottomPopwindow.showPopupWindow();
                 break;
             case R.id.knife3:
-                Toast.makeText(this, "knife3", Toast.LENGTH_SHORT).show();
+                ScalePopwindow scalePopwindow=new ScalePopwindow(this);
+                scalePopwindow.showPopupWindow();
                 break;
         }
     }
@@ -142,7 +156,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         setSupportActionBar(toolbar);
-        toolbar.setNavigationIcon(getResources().getDrawable(R.mipmap.for_return));
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
         //toolbar.setLogo(getResources().getDrawable(R.drawable.common_google_signin_btn_icon_dark));
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -196,5 +210,23 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu); //解析menu布局文件到menu
         return super.onCreateOptionsMenu(menu);
+    }
+    /**
+     * 修改menu中图标在android4.0 以上无法显示的问题
+     */
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        if (menu != null) {
+            if (menu.getClass() == MenuBuilder.class) {
+                try {
+                    Method method = menu.getClass().getDeclaredMethod("setOptionalIconsVisible", Boolean.TYPE);
+                    method.setAccessible(true);
+                    method.invoke(menu, true);
+                } catch (Exception e) {
+                }
+            }
+        }
+        return super.onPrepareOptionsMenu(menu);
+
     }
 }
