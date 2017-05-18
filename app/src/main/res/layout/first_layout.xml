@@ -109,6 +109,7 @@
                         android:textColor="#fff"
                         android:background="@drawable/button_shape"
                         android:text="knife3" />
+
                 </LinearLayout>
             </LinearLayout>
         </android.support.v4.widget.NestedScrollView>

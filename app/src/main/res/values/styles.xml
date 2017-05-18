@@ -39,4 +39,8 @@
         <item name="android:background">#CDCDCD</item>
         <item name="android:layout_margin">2dp</item>
     </style>
+    <style name="pop_anim_style">
+        <item name="android:windowEnterAnimation">@anim/popupwindow_show</item>
+        <item name="android:windowExitAnimation">@anim/popupwindow_exit</item>
+    </style>
 </resources>

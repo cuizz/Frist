@@ -2,7 +2,6 @@ package com.example.frist;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.net.Uri;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -12,34 +11,21 @@ import android.os.Bundle;
 import android.support.v7.view.menu.MenuBuilder;
 import android.support.v7.widget.Toolbar;
 
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.frist.bean.Student;
-import com.example.frist.bean.Teacher;
-import com.example.frist.bean.User;
-import com.example.frist.util.GreenDaoManager;
 import com.example.frist.view.AutoPopwindow;
 import com.example.frist.view.FromBottomPopwindow;
 import com.example.frist.view.ScalePopwindow;
-import com.google.android.gms.appindexing.Action;
-import com.google.android.gms.appindexing.AppIndex;
-import com.google.android.gms.appindexing.Thing;
-import com.google.android.gms.common.api.GoogleApiClient;
 
 import java.lang.reflect.Method;
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindBitmap;
@@ -66,8 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.button)
     public void onclick(View view) {
-        Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-        MainActivity.this.startActivity(intent);
+
     }
 
     @BindViews({R.id.knife1, R.id.knife2, R.id.knife3})
@@ -88,14 +73,7 @@ public class MainActivity extends AppCompatActivity {
                 toast.setView(views);
                 toast.setGravity(Gravity.CENTER,0,0);
                 toast.show();
-                AutoPopwindow autoPopwindow=new AutoPopwindow(this);
-                View view1=autoPopwindow.getPopupWindowView();
-                LinearLayout v = (LinearLayout) view1.findViewById(R.id.popup_contianer);
-                // int width = getScreenWidth() / 3-10;
-                 //int height = getPopupViewHeight();
-                 RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(150, 150);
-                v.setLayoutParams(params);
-                autoPopwindow.showPopupWindow(view);
+                AutoPopwindow autoPopwindow=new AutoPopwindow(this,view,2);
                 break;
             case R.id.knife2:
                 FromBottomPopwindow bottomPopwindow=new FromBottomPopwindow(this);
