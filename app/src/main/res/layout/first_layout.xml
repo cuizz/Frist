@@ -90,7 +90,7 @@
                         android:background="@drawable/button_shape"
                         android:layout_margin="10dp"
                         android:textColor="#fff"
-                        android:text="knife1" />
+                        android:text="popup" />
 
                     <Button
                         android:id="@+id/knife2"
@@ -99,7 +99,7 @@
                         android:background="@drawable/button_shape"
                         android:layout_margin="10dp"
                         android:textColor="#fff"
-                        android:text="knife2" />
+                        android:text="popup" />
 
                     <Button
                         android:id="@+id/knife3"
@@ -108,7 +108,7 @@
                         android:layout_margin="10dp"
                         android:textColor="#fff"
                         android:background="@drawable/button_shape"
-                        android:text="knife3" />
+                        android:text="popup" />
 
                 </LinearLayout>
             </LinearLayout>

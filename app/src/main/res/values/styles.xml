@@ -39,7 +39,9 @@
         <item name="android:background">#CDCDCD</item>
         <item name="android:layout_margin">2dp</item>
     </style>
-    <style name="pop_anim_style">
+
+    <!-- 一定要有parent，否则给popupWindow设置动画不起作用 -->
+    <style name="pop_anim_style"  parent="@android:style/Animation">
         <item name="android:windowEnterAnimation">@anim/popupwindow_show</item>
         <item name="android:windowExitAnimation">@anim/popupwindow_exit</item>
     </style>

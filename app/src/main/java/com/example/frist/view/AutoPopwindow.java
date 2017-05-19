@@ -32,7 +32,7 @@ public class AutoPopwindow {
         popupWindow.setFocusable(true);//popupwindow设置焦点
         popupWindow.setBackgroundDrawable(new ColorDrawable(0xaa000000));//设置背景
         popupWindow.setOutsideTouchable(true);//点击外面窗口消失
-        //popupWindow.setAnimationStyle(R.style.pop_anim_style);//设置动画
+        popupWindow.setAnimationStyle(R.style.pop_anim_style);//设置动画
         // popupWindow.showAsDropDown(v,0,0);
         //获取点击View的坐标
         int[] location = new int[2];

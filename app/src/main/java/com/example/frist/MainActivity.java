@@ -52,7 +52,8 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.button)
     public void onclick(View view) {
-
+        Intent intent=new Intent(this,SecondActivity.class);
+        startActivity(intent);
     }
 
     @BindViews({R.id.knife1, R.id.knife2, R.id.knife3})
@@ -205,6 +206,5 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         return super.onPrepareOptionsMenu(menu);
-
     }
 }
