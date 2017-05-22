@@ -5,8 +5,7 @@
         android:id="@+id/menu1"
         android:title="swipeLayout"
         android:icon="@drawable/icon"
-        app:showAsAction="never|withText"
-        ></item>
+        app:showAsAction="never|withText"></item>
     <item
         android:id="@+id/menu2"
         android:title="webView"
@@ -20,7 +19,7 @@
         app:showAsAction="never|withText"></item>
     <item
         android:id="@+id/menu4"
-        android:title="js"
+        android:title="recycleView"
         android:icon="@drawable/icon"
         app:showAsAction="never|withText"></item>
 

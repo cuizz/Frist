@@ -169,7 +169,8 @@ public class MainActivity extends AppCompatActivity {
                         MainActivity.this.startActivity(intentss);
                         break;
                     case R.id.menu4:
-
+                        Intent intentsss=new Intent(MainActivity.this,SecondActivity.class);
+                        MainActivity.this.startActivity(intentsss);
                         break;
                 }
                 return true;

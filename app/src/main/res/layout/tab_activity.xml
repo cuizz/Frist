@@ -28,7 +28,8 @@
                 android:id="@+id/banner"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:fitsSystemWindows="true" />
+                android:fitsSystemWindows="true"
+                app:indicator_drawable_selected="@drawable/ic_fiber_manual_record"/>
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
