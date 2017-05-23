@@ -27,8 +27,10 @@ android {
 }
 repositories {
     maven {
+
         url 'https://github.com/yanzm/LoopViewPager/raw/master/maven-repo'
         maven { url "https://jitpack.io" }
+
     }
 }
 dependencies {
@@ -70,5 +72,7 @@ dependencies {
     compile 'com.youth.banner:banner:1.4.9'
     //封装的PopupWindow
     compile 'com.github.razerdp:BasePopup:v1.7.1'
+    //进度条
+    compile 'com.daimajia.numberprogressbar:library:1.4@aar'
     compile files('libs/library.jar')
 }

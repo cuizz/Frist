@@ -6,9 +6,17 @@ import android.support.v7.widget.RecyclerView;
 
 import com.example.frist.activity.TopBarBaseActivity;
 import com.example.frist.adapter.RecycleViewAdapter;
-import com.example.frist.bean.Student;
-import com.example.frist.util.GreenDaoManager;
+import com.example.frist.bean.News;
+import com.example.frist.bean.Photos;
+import com.example.frist.http.HttpEvent;
+import com.example.frist.http.HttpTask;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
+import java.util.HashMap;
 import java.util.List;
 
 import butterknife.BindView;
@@ -19,7 +27,6 @@ public class SecondActivity extends TopBarBaseActivity {
     @BindView(R.id.recycleView)
     RecyclerView recycleView;
     RecycleViewAdapter adapter;
-    List<Student>students;
     @Override
     protected int getContentView() {
         return R.layout.second_layout;
@@ -45,11 +52,20 @@ public class SecondActivity extends TopBarBaseActivity {
     }
 
     private void initViews() {
-        students= GreenDaoManager.getInstance().getSession().getStudentDao().loadAll();
-        LinearLayoutManager layoutManager=new LinearLayoutManager(this);
-        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        recycleView.setLayoutManager(layoutManager);
-        adapter=new RecycleViewAdapter(students);
-        recycleView.setAdapter(adapter);
+        HashMap<String,String> map=new HashMap<>();
+        new HttpTask(this,"http://c.3g.163.com/photo/api/list/0096/4GJ60096.json",0,2,"",map).execute();
+    }
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onEventMainThread(HttpEvent event) {
+        switch (event.getTsg()){
+            case 2:
+                List<Photos> responses=new Gson().fromJson(event.getContent(),new TypeToken<List<Photos>>(){}.getType());
+                LinearLayoutManager layoutManager=new LinearLayoutManager(this);
+                layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+                recycleView.setLayoutManager(layoutManager);
+                adapter=new RecycleViewAdapter(responses);
+                recycleView.setAdapter(adapter);
+                break;
+        }
     }
 }

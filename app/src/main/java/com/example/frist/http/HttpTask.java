@@ -26,7 +26,7 @@ import java.util.Set;
 /**
  * Created by ASUS on 2014/12/4.
  */
-public class HttpTask extends AsyncTask<Void,Void,String>  {
+public class HttpTask extends AsyncTask<Void, Void, String> {
 
     ProgressDialog mpDialog;
     Context mContent;
@@ -35,9 +35,9 @@ public class HttpTask extends AsyncTask<Void,Void,String>  {
     int httpTpye;
     int mTag;
     String mUrl;
-    HashMap<String,String> mBody;
+    HashMap<String, String> mBody;
 
-    public HttpTask(Context mContent, String msgToShow, int httpTpye, int mTag, String mUrl, HashMap<String,String> mBody) {
+    public HttpTask(Context mContent, String msgToShow, int httpTpye, int mTag, String mUrl, HashMap<String, String> mBody) {
         this.mContent = mContent;
         this.msgToShow = msgToShow;
         this.httpTpye = httpTpye;
@@ -47,7 +47,7 @@ public class HttpTask extends AsyncTask<Void,Void,String>  {
     }
 
     @Override
-    protected void onPreExecute(){
+    protected void onPreExecute() {
         super.onPreExecute();
         mpDialog = new ProgressDialog(mContent, ProgressDialog.THEME_HOLO_LIGHT);
 //        mpDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);//设置风格为圆形进度条
@@ -67,40 +67,40 @@ public class HttpTask extends AsyncTask<Void,Void,String>  {
     @Override
     protected String doInBackground(Void... params) {
         Request request = null;
-      //  switch (httpTpye){
-            //case httpGet:
-              //  request = new Request.Builder().tag(mTag)
-              //          .url(mUrl)
-              //          .build();
-              //  break;
-          //  case  httpPost:
-        JSONObject object=new JSONObject();
+        switch (httpTpye) {
+            case 0:
+                request = new Request.Builder().tag(mTag)
+                        .url(msgToShow)
+                        .build();
+                break;
+            case 1:
+                JSONObject object = new JSONObject();
                 StringBuilder stringBuilder = new StringBuilder("");
-                if (mBody!=null){
+                if (mBody != null) {
                     Set<String> keys = mBody.keySet();
-                    for (String key : keys){
+                    for (String key : keys) {
                         String value = mBody.get(key);
-                        if (StringUtils.isNotEmpty(value)){
+                        if (StringUtils.isNotEmpty(value)) {
                             stringBuilder.append(key).append('=').append(value).append('&');
                             try {
-                                object.put(key,value);
-                            }catch (Exception e){
+                                object.put(key, value);
+                            } catch (Exception e) {
 
                             }
 
                         }
                     }
                 }
-                String content = StringUtils.removeEnd(stringBuilder.toString(),"&");
+                String content = StringUtils.removeEnd(stringBuilder.toString(), "&");
                 //DebugLog.e(content);
-                RequestBody formBody = RequestBody.create(MediaType.parse("application/x-www-form-urlencoded"),content);
-               FormEncodingBuilder f = new FormEncodingBuilder();
-              if (mBody!=null){
+                RequestBody formBody = RequestBody.create(MediaType.parse("application/x-www-form-urlencoded"), content);
+                FormEncodingBuilder f = new FormEncodingBuilder();
+                if (mBody != null) {
                     Set<String> keys = mBody.keySet();
-                    for (String key : keys){
-                     String value = mBody.get(key);
-                       if (StringUtils.isNotEmpty(value)){
-                            f.add(key,value);
+                    for (String key : keys) {
+                        String value = mBody.get(key);
+                        if (StringUtils.isNotEmpty(value)) {
+                            f.add(key, value);
                         }
                     }
                 }
@@ -110,15 +110,15 @@ public class HttpTask extends AsyncTask<Void,Void,String>  {
                         .url(mUrl)
                         .post(formBody)
                         .build();
-               // break;
-      //  }
+                break;
+        }
         //DebugLog.e(mUrl);
-        if (request != null){
+        if (request != null) {
             OkHttpClient okHttpClient = new OkHttpClient();
             try {
                 mCall = okHttpClient.newCall(request);
                 Response response = mCall.execute();
-                if(response.isSuccessful()){
+                if (response.isSuccessful()) {
                     String temp = response.body().string();
                     //DebugLog.e(temp);
                     return temp;
@@ -134,17 +134,17 @@ public class HttpTask extends AsyncTask<Void,Void,String>  {
     protected void onPostExecute(String result) {
         super.onPostExecute(result);
         mpDialog.dismiss();
-        Log.i("TAF",result);
-       EventBus.getDefault().post(new HttpEvent(result,mTag));
-
+        // Log.i("TAF",result);
+        EventBus.getDefault().post(new HttpEvent(result, mTag));
     }
 
     Call mCall;
+
     @Override
     protected void onCancelled() {
         super.onCancelled();
-       // DebugLog.e("onCancelled");
-        if (mCall!=null){
+        // DebugLog.e("onCancelled");
+        if (mCall != null) {
             mCall.cancel();
         }
     }

@@ -15,6 +15,8 @@ import android.widget.TextView;
 
 import com.example.frist.R;
 
+import org.greenrobot.eventbus.EventBus;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -42,6 +44,7 @@ public abstract class TopBarBaseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base_top_bar);
+        EventBus.getDefault().register(this);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         viewContent = (FrameLayout) findViewById(R.id.viewContent);
