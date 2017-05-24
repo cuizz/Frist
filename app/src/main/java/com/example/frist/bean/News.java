@@ -21,42 +21,43 @@ public class News {
 
     public static class T1348647909107Bean {
         /**
-         * postid : CL3C32NB0001875P
+         * postid : CL7403DE00018AOR
          * hasCover : false
          * hasHead : 1
-         * replyCount : 146580
-         * ltitle : 上海一家三口住9平米房间27年 儿子踩着冰箱上床
+         * replyCount : 236
+         * ltitle : 女子持棒殴打子女致重伤 女儿至今不愿开口说话
          * hasImg : 1
-         * digest : 日新月异的上海，每年都有新的建筑地标崛起，见证着这座城市的发展。然而，也有一群人静静地蜗居在这座城市中日复一日地生活。蔡燕梅一家三口人居住在唐家塔9.2平方米空
+         * digest : 新京报快讯河北省唐山市一女子持铁棒殴打一子一女致重伤。今日(5月24日)上午，新京报记者在位于唐山市的华北理工大学附属医院见到被打女孩李佳佳(化名)，医生称，目
          * hasIcon : false
-         * docid : CL3C32NB0001875P
-         * title : 上海一家三口住9平米房间27年 儿子踩着冰箱上床
+         * docid : CL7403DE00018AOR
+         * title : 女子持棒殴打子女致重伤 女儿至今不愿开口说话
          * order : 1
-         * priority : 116
-         * lmodify : 2017-05-23 11:36:17
-         * boardid : news_shehui7_bbs
-         * ads : [{"docid":"CKUMD71Q000189DH","title":"每个人都是一条无法矫直的河流","skipID":"CKUMD71Q000189DH","tag":"doc","imgsrc":"http://cms-bucket.nosdn.127.net/4ecd0fb70e5642f584a2c4e52409ea9620170521071010.png","subtitle":"","skipType":"doc","url":"CKUMD71Q000189DH"},{"title":"朴槿惠接受首次公审 支持者法院外集会","skipID":"00AO0001|2256820","tag":"photoset","imgsrc":"http://cms-bucket.nosdn.127.net/c455309c732544d7a5cd9cef17f4d61920170523101639.jpeg","subtitle":"","skipType":"photoset","url":"00AO0001|2256820"},{"title":"特朗普偕家人参观耶路撒冷\"哭墙\"","skipID":"00AO0001|2256771","tag":"photoset","imgsrc":"http://cms-bucket.nosdn.127.net/0fc59f8a1eec4208ac21c2d6797da5d320170523075528.jpeg","subtitle":"","skipType":"photoset","url":"00AO0001|2256771"},{"title":"英国一体育场发生爆炸 观众慌乱撤离","skipID":"00AO0001|2256766","tag":"photoset","imgsrc":"http://cms-bucket.nosdn.127.net/51080481cc2d48f2b2fdc374e6e2e0c820170523071310.jpeg","subtitle":"","skipType":"photoset","url":"00AO0001|2256766"},{"title":"朴槿惠出席首次公审未穿囚服略憔悴","skipID":"00AO0001|2256798","tag":"photoset","imgsrc":"http://cms-bucket.nosdn.127.net/8c1e50b7f7874549b42fb91afc00679420170523090847.jpeg","subtitle":"","skipType":"photoset","url":"00AO0001|2256798"}]
+         * priority : 97
+         * lmodify : 2017-05-24 14:28:20
+         * boardid : news2_bbs
+         * ads : [{"title":"英国各地悼念爆炸案遇难者 女王默哀","skipID":"00AO0001|2257077","tag":"photoset","imgsrc":"http://cms-bucket.nosdn.127.net/1bdf0521e1db45e98d1eb2f104a2f91e20170524163659.jpeg","subtitle":"","skipType":"photoset","url":"00AO0001|2257077"},{"title":"大学生裹\"人体肉粽\"拍毕业照 疯狂解压","skipID":"00AP0001|2257065","tag":"photoset","imgsrc":"http://cms-bucket.nosdn.127.net/83fdd86f651c49fb86ae94a1efd190fb20170524162345.jpeg","subtitle":"","skipType":"photoset","url":"00AP0001|2257065"},{"title":"曼彻斯特市政厅降半旗 悼念爆炸遇难者","skipID":"00AO0001|2257048","tag":"photoset","imgsrc":"http://cms-bucket.nosdn.127.net/7205d9863b224937b24265c8edec09bb20170524142528.jpeg","subtitle":"","skipType":"photoset","url":"00AO0001|2257048"},{"docid":"CL6FMJ1I000189DH","title":"每个人都是一条无法矫直的河流","skipID":"CL6FMJ1I000189DH","tag":"doc","imgsrc":"http://cms-bucket.nosdn.127.net/a4ff94efe23f4d61aa5f783c7e30ca7620170524074932.png","subtitle":"","skipType":"doc","url":"CL6FMJ1I000189DH"},{"title":"山西煤矿透水事故5人获救6人遇难","skipID":"00AP0001|2257042","tag":"photoset","imgsrc":"http://cms-bucket.nosdn.127.net/b14cb749ed7040f5a3d5a62c18d47eaa20170524135339.jpeg","subtitle":"","skipType":"photoset","url":"00AP0001|2257042"}]
          * topic_background : http://img2.cache.netease.com/m/newsapp/reading/cover1/C1348646712614.jpg
-         * url_3w : http://news.163.com/17/0523/02/CL3C32NB0001875P.html
+         * url_3w : http://news.163.com/17/0524/13/CL7403DE00018AOR.html
          * template : normal1
-         * votecount : 141293
+         * votecount : 209
          * alias : Top News
          * cid : C1348646712614
-         * url : http://3g.163.com/news/17/0523/02/CL3C32NB0001875P.html
+         * url : http://3g.163.com/news/17/0524/13/CL7403DE00018AOR.html
          * hasAD : 1
-         * imgextra : [{"imgsrc":"http://cms-bucket.nosdn.127.net/1275d84a39ab45bab5721287cfbde80e20170523024408.png"},{"imgsrc":"http://cms-bucket.nosdn.127.net/d8f0a9917f1b4248abb893b57e8a301920170523024408.png"}]
-         * source : 解放日报
+         * imgextra : [{"imgsrc":"http://cms-bucket.nosdn.127.net/e85e7f49024c4aba9f644e88560fe66420170524134836.png"},{"imgsrc":"http://cms-bucket.nosdn.127.net/d9d22b334220461fa6ffae625b9d670220170524134836.png"}]
+         * source : 新京报即时新闻
          * ename : androidnews
          * tname : 头条
          * subtitle :
-         * imgsrc : http://cms-bucket.nosdn.127.net/a02605d75532487d83d79ebdff25488a20170523024408.png
-         * ptime : 2017-05-23 02:46:26
-         * TAGS : 正在直播 视频
-         * skipID : 133540
-         * live_info : {"mutilVideo":false,"pano":false,"end_time":"2017-05-24 07:08:54","user_count":2315755,"roomId":133540,"start_time":"2017-05-23 07:08:53","type":0,"video":true}
-         * skipType : live
-         * TAG : 正在直播
-         * specialID : S1495506268687
+         * imgsrc : http://cms-bucket.nosdn.127.net/eb5d8bb4ea7447d3a8d5d3c18f508f7620170524134836.png
+         * ptime : 2017-05-24 13:19:24
+         * skipID : S1495496798365
+         * skipType : special
+         * specialextra : [{"url_3w":"http://news.163.com/17/0524/01/CL5OL01T00018AOR.html","postid":"CL5OL01T00018AOR","votecount":71410,"replyCount":74283,"ltitle":"警方确认爆炸案嫌犯身份:22岁男子 来自利比亚家庭","digest":"新京报快讯北京时间24日凌晨，大曼彻斯特区警方通过推特发布消息称，曼彻斯特竞技场爆炸案的嫌疑人已被确认。消息称，嫌疑人是一位名叫萨尔曼·阿贝迪的22岁男子，警方","url":"http://3g.163.com/news/17/0524/01/CL5OL01T00018AOR.html","docid":"CL5OL01T00018AOR","title":"警方确认爆炸案嫌犯身份:22岁男子 来自利比亚家庭","source":"新京报即时新闻","priority":72,"imgsrc":"http://cms-bucket.nosdn.127.net/39f4a14234994b2584564b7413c0afa520170524011653.png","subtitle":"","boardid":"news2_bbs","ptime":"2017-05-24 00:59:54"},{"url_3w":"http://news.163.com/17/0524/07/CL6F9PS2000187V9.html","postid":"CL6F9PS2000187V9","votecount":2123,"replyCount":2317,"ltitle":"英爆炸案嫌犯系22岁利比亚男子 熟人称其\"孤独\"","digest":"【环球网报道】英国曼彻斯特体育场当地时间5月22日晚间发生爆炸,体育场内当时正在举行美国歌手爱莉安娜·格兰德的演唱会。据美国有线电视新闻网(CNN)5月24日最","url":"http://3g.163.com/news/17/0524/07/CL6F9PS2000187V9.html","docid":"CL6F9PS2000187V9","title":"英爆炸案嫌犯系22岁利比亚男子 熟人称其\"孤独\"","source":"环球时报-环球网","priority":71,"imgsrc":"http://cms-bucket.nosdn.127.net/02ca98c6c288400a9b41d6b560d8a3ba20170524074939.png","subtitle":"","boardid":"news2_bbs","ptime":"2017-05-24 07:30:00"},{"url_3w":"http://news.163.com/17/0524/07/CL6E9GAI000187V9.html","postid":"CL6E9GAI000187V9","votecount":1749,"replyCount":1982,"ltitle":"十几年来首次！英国将恐袭威胁级别升为\"危急\"","digest":"【环球网报道】据美国有线电视新闻网(CNN)5月24日最新消息，英国首相特雷莎·梅于23日宣布，英国将恐袭威胁级别提升为最高级--\u201c危急\u201d，这是十几年来的首次。","url":"http://3g.163.com/news/17/0524/07/CL6E9GAI000187V9.html","docid":"CL6E9GAI000187V9","title":"十几年来首次！英国将恐袭威胁级别升为\"危急\"","source":"环球时报-环球网","priority":71,"imgsrc":"http://cms-bucket.nosdn.127.net/96c207e2c77c4a10bd5fa236c9bd212c20170524072545.png","subtitle":"","boardid":"news2_bbs","ptime":"2017-05-24 07:16:00"}]
+         * specialtip : 进入专题
+         * specialID : S1495496798365
+         * speciallogo :
+         * specialadlogo :
          */
 
         private String postid;
@@ -87,14 +88,15 @@ public class News {
         private String subtitle;
         private String imgsrc;
         private String ptime;
-        private String TAGS;
         private String skipID;
-        private LiveInfoBean live_info;
         private String skipType;
-        private String TAG;
+        private String specialtip;
         private String specialID;
+        private String speciallogo;
+        private String specialadlogo;
         private List<AdsBean> ads;
         private List<ImgextraBean> imgextra;
+        private List<SpecialextraBean> specialextra;
 
         public String getPostid() {
             return postid;
@@ -320,28 +322,12 @@ public class News {
             this.ptime = ptime;
         }
 
-        public String getTAGS() {
-            return TAGS;
-        }
-
-        public void setTAGS(String TAGS) {
-            this.TAGS = TAGS;
-        }
-
         public String getSkipID() {
             return skipID;
         }
 
         public void setSkipID(String skipID) {
             this.skipID = skipID;
-        }
-
-        public LiveInfoBean getLive_info() {
-            return live_info;
-        }
-
-        public void setLive_info(LiveInfoBean live_info) {
-            this.live_info = live_info;
         }
 
         public String getSkipType() {
@@ -352,12 +338,12 @@ public class News {
             this.skipType = skipType;
         }
 
-        public String getTAG() {
-            return TAG;
+        public String getSpecialtip() {
+            return specialtip;
         }
 
-        public void setTAG(String TAG) {
-            this.TAG = TAG;
+        public void setSpecialtip(String specialtip) {
+            this.specialtip = specialtip;
         }
 
         public String getSpecialID() {
@@ -366,6 +352,22 @@ public class News {
 
         public void setSpecialID(String specialID) {
             this.specialID = specialID;
+        }
+
+        public String getSpeciallogo() {
+            return speciallogo;
+        }
+
+        public void setSpeciallogo(String speciallogo) {
+            this.speciallogo = speciallogo;
+        }
+
+        public String getSpecialadlogo() {
+            return specialadlogo;
+        }
+
+        public void setSpecialadlogo(String specialadlogo) {
+            this.specialadlogo = specialadlogo;
         }
 
         public List<AdsBean> getAds() {
@@ -384,105 +386,26 @@ public class News {
             this.imgextra = imgextra;
         }
 
-        public static class LiveInfoBean {
-            /**
-             * mutilVideo : false
-             * pano : false
-             * end_time : 2017-05-24 07:08:54
-             * user_count : 2315755
-             * roomId : 133540
-             * start_time : 2017-05-23 07:08:53
-             * type : 0
-             * video : true
-             */
+        public List<SpecialextraBean> getSpecialextra() {
+            return specialextra;
+        }
 
-            private boolean mutilVideo;
-            private boolean pano;
-            private String end_time;
-            private int user_count;
-            private int roomId;
-            private String start_time;
-            private int type;
-            private boolean video;
-
-            public boolean isMutilVideo() {
-                return mutilVideo;
-            }
-
-            public void setMutilVideo(boolean mutilVideo) {
-                this.mutilVideo = mutilVideo;
-            }
-
-            public boolean isPano() {
-                return pano;
-            }
-
-            public void setPano(boolean pano) {
-                this.pano = pano;
-            }
-
-            public String getEnd_time() {
-                return end_time;
-            }
-
-            public void setEnd_time(String end_time) {
-                this.end_time = end_time;
-            }
-
-            public int getUser_count() {
-                return user_count;
-            }
-
-            public void setUser_count(int user_count) {
-                this.user_count = user_count;
-            }
-
-            public int getRoomId() {
-                return roomId;
-            }
-
-            public void setRoomId(int roomId) {
-                this.roomId = roomId;
-            }
-
-            public String getStart_time() {
-                return start_time;
-            }
-
-            public void setStart_time(String start_time) {
-                this.start_time = start_time;
-            }
-
-            public int getType() {
-                return type;
-            }
-
-            public void setType(int type) {
-                this.type = type;
-            }
-
-            public boolean isVideo() {
-                return video;
-            }
-
-            public void setVideo(boolean video) {
-                this.video = video;
-            }
+        public void setSpecialextra(List<SpecialextraBean> specialextra) {
+            this.specialextra = specialextra;
         }
 
         public static class AdsBean {
             /**
-             * docid : CKUMD71Q000189DH
-             * title : 每个人都是一条无法矫直的河流
-             * skipID : CKUMD71Q000189DH
-             * tag : doc
-             * imgsrc : http://cms-bucket.nosdn.127.net/4ecd0fb70e5642f584a2c4e52409ea9620170521071010.png
+             * title : 英国各地悼念爆炸案遇难者 女王默哀
+             * skipID : 00AO0001|2257077
+             * tag : photoset
+             * imgsrc : http://cms-bucket.nosdn.127.net/1bdf0521e1db45e98d1eb2f104a2f91e20170524163659.jpeg
              * subtitle :
-             * skipType : doc
-             * url : CKUMD71Q000189DH
+             * skipType : photoset
+             * url : 00AO0001|2257077
+             * docid : CL6FMJ1I000189DH
              */
 
-            private String docid;
             private String title;
             private String skipID;
             private String tag;
@@ -490,14 +413,7 @@ public class News {
             private String subtitle;
             private String skipType;
             private String url;
-
-            public String getDocid() {
-                return docid;
-            }
-
-            public void setDocid(String docid) {
-                this.docid = docid;
-            }
+            private String docid;
 
             public String getTitle() {
                 return title;
@@ -554,11 +470,19 @@ public class News {
             public void setUrl(String url) {
                 this.url = url;
             }
+
+            public String getDocid() {
+                return docid;
+            }
+
+            public void setDocid(String docid) {
+                this.docid = docid;
+            }
         }
 
         public static class ImgextraBean {
             /**
-             * imgsrc : http://cms-bucket.nosdn.127.net/1275d84a39ab45bab5721287cfbde80e20170523024408.png
+             * imgsrc : http://cms-bucket.nosdn.127.net/e85e7f49024c4aba9f644e88560fe66420170524134836.png
              */
 
             private String imgsrc;
@@ -569,6 +493,162 @@ public class News {
 
             public void setImgsrc(String imgsrc) {
                 this.imgsrc = imgsrc;
+            }
+        }
+
+        public static class SpecialextraBean {
+            /**
+             * url_3w : http://news.163.com/17/0524/01/CL5OL01T00018AOR.html
+             * postid : CL5OL01T00018AOR
+             * votecount : 71410
+             * replyCount : 74283
+             * ltitle : 警方确认爆炸案嫌犯身份:22岁男子 来自利比亚家庭
+             * digest : 新京报快讯北京时间24日凌晨，大曼彻斯特区警方通过推特发布消息称，曼彻斯特竞技场爆炸案的嫌疑人已被确认。消息称，嫌疑人是一位名叫萨尔曼·阿贝迪的22岁男子，警方
+             * url : http://3g.163.com/news/17/0524/01/CL5OL01T00018AOR.html
+             * docid : CL5OL01T00018AOR
+             * title : 警方确认爆炸案嫌犯身份:22岁男子 来自利比亚家庭
+             * source : 新京报即时新闻
+             * priority : 72
+             * imgsrc : http://cms-bucket.nosdn.127.net/39f4a14234994b2584564b7413c0afa520170524011653.png
+             * subtitle :
+             * boardid : news2_bbs
+             * ptime : 2017-05-24 00:59:54
+             */
+
+            private String url_3w;
+            private String postid;
+            private int votecount;
+            private int replyCount;
+            private String ltitle;
+            private String digest;
+            private String url;
+            private String docid;
+            private String title;
+            private String source;
+            private int priority;
+            private String imgsrc;
+            private String subtitle;
+            private String boardid;
+            private String ptime;
+
+            public String getUrl_3w() {
+                return url_3w;
+            }
+
+            public void setUrl_3w(String url_3w) {
+                this.url_3w = url_3w;
+            }
+
+            public String getPostid() {
+                return postid;
+            }
+
+            public void setPostid(String postid) {
+                this.postid = postid;
+            }
+
+            public int getVotecount() {
+                return votecount;
+            }
+
+            public void setVotecount(int votecount) {
+                this.votecount = votecount;
+            }
+
+            public int getReplyCount() {
+                return replyCount;
+            }
+
+            public void setReplyCount(int replyCount) {
+                this.replyCount = replyCount;
+            }
+
+            public String getLtitle() {
+                return ltitle;
+            }
+
+            public void setLtitle(String ltitle) {
+                this.ltitle = ltitle;
+            }
+
+            public String getDigest() {
+                return digest;
+            }
+
+            public void setDigest(String digest) {
+                this.digest = digest;
+            }
+
+            public String getUrl() {
+                return url;
+            }
+
+            public void setUrl(String url) {
+                this.url = url;
+            }
+
+            public String getDocid() {
+                return docid;
+            }
+
+            public void setDocid(String docid) {
+                this.docid = docid;
+            }
+
+            public String getTitle() {
+                return title;
+            }
+
+            public void setTitle(String title) {
+                this.title = title;
+            }
+
+            public String getSource() {
+                return source;
+            }
+
+            public void setSource(String source) {
+                this.source = source;
+            }
+
+            public int getPriority() {
+                return priority;
+            }
+
+            public void setPriority(int priority) {
+                this.priority = priority;
+            }
+
+            public String getImgsrc() {
+                return imgsrc;
+            }
+
+            public void setImgsrc(String imgsrc) {
+                this.imgsrc = imgsrc;
+            }
+
+            public String getSubtitle() {
+                return subtitle;
+            }
+
+            public void setSubtitle(String subtitle) {
+                this.subtitle = subtitle;
+            }
+
+            public String getBoardid() {
+                return boardid;
+            }
+
+            public void setBoardid(String boardid) {
+                this.boardid = boardid;
+            }
+
+            public String getPtime() {
+                return ptime;
+            }
+
+            public void setPtime(String ptime) {
+                this.ptime = ptime;
             }
         }
     }

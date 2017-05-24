@@ -2,31 +2,32 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="80dp">
+    android:layout_height="wrap_content">
 
     <!-- Surface View Start -->
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <ImageView
-            android:id="@+id/leftimage"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:scaleType="fitXY"
-            android:src="@mipmap/ic_launcher"
-            android:padding="5dp"/>
         <TextView
             android:id="@+id/tv_desc"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_centerHorizontal="true"
-            android:layout_toRightOf="@+id/leftimage"
             android:background="#FFFFFFFF"
             android:gravity="center_vertical"
             android:padding="10dp"
+            android:textSize="18sp"
             android:tag="Hover"
+            android:layout_marginRight="8dp"
             android:text="玩android2群" />
-    </LinearLayout>
+        <ImageView
+            android:id="@+id/leftimage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:scaleType="fitXY"
+            android:src="@mipmap/ic_launcher"
+            android:padding="5dp"/>
+    </RelativeLayout>
 
 </LinearLayout>

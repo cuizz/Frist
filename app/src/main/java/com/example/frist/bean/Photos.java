@@ -1,12 +1,14 @@
 package com.example.frist.bean;
 
+import com.chad.library.adapter.base.entity.MultiItemEntity;
+
 import java.util.List;
 
 /**
  * Created by Administrator on 2017/5/23.
  */
 
-public class Photos {
+public class Photos implements MultiItemEntity{
 
     /**
      * desc : 2017年5月22日，北京。当日在连续一天的降雨之后，京城天空明净，在颐和园远望西山，山峦层叠，云雾缭绕，将古老的皇家园林装扮得美轮美奂，宛如水墨画，不少市民直叹“美”。
@@ -26,7 +28,7 @@ public class Photos {
      * imgsum : 4
      * tcover : http://img3.cache.netease.com/photo/0096/2017-05-23/t_CL4APN2F54GI0096.jpg
      */
-
+    private int type;
     private String desc;
     private String pvnum;
     private String createdate;
@@ -43,6 +45,29 @@ public class Photos {
     private String imgsum;
     private String tcover;
     private List<String> pics;
+
+    public Photos() {
+    }
+
+    public Photos(int type, List<String> pics, String tcover, String clientcover, String seturl, String desc, String pvnum, String createdate, String scover, String cover, String setname, String clientcover1, String topicname, String replynum, String setid, String datetime, String imgsum) {
+        this.type = type;
+        this.pics = pics;
+        this.tcover = tcover;
+        this.clientcover = clientcover;
+        this.seturl = seturl;
+        this.desc = desc;
+        this.pvnum = pvnum;
+        this.createdate = createdate;
+        this.scover = scover;
+        this.cover = cover;
+        this.setname = setname;
+        this.clientcover1 = clientcover1;
+        this.topicname = topicname;
+        this.replynum = replynum;
+        this.setid = setid;
+        this.datetime = datetime;
+        this.imgsum = imgsum;
+    }
 
     public String getDesc() {
         return desc;
@@ -171,4 +196,15 @@ public class Photos {
     public void setPics(List<String> pics) {
         this.pics = pics;
     }
+
+    @Override
+    public int getItemType() {
+        if(imgsum.equals("4")||imgsum.equals("5")){
+            type=1;
+        }else{
+            type=2;
+        }
+        return type;
+    }
+
 }

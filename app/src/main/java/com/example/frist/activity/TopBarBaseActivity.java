@@ -137,17 +137,6 @@ public abstract class TopBarBaseActivity extends AppCompatActivity {
         return super.onPrepareOptionsMenu(menu);
     }
 
-   /* @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home){
-            onClickListenerTopLeft.onClick();
-        }
-        else if (item.getItemId() == R.id.menu_1){
-            onClickListenerTopRight.onClick();
-        }
-
-        return true; // true 告诉系统我们自己处理了点击事件
-    }*/
 }
 
 

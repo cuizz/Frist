@@ -7,7 +7,7 @@ android {
     buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "com.example.frist"
-        minSdkVersion 15
+        minSdkVersion 17
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -44,7 +44,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.google.android.gms:play-services-appindexing:8.4.0'
     compile 'net.yanzm:loopviewpager:25.0.1'
-    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:v1.9.7'
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:v2.0.1'
     //图片的加载框架
     compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'com.android.support:support-v4:25.1.0'
@@ -74,5 +74,7 @@ dependencies {
     compile 'com.github.razerdp:BasePopup:v1.7.1'
     //进度条
     compile 'com.daimajia.numberprogressbar:library:1.4@aar'
+    //分割线
+    compile 'com.yqritc:recyclerview-flexibledivider:1.4.0'
     compile files('libs/library.jar')
 }

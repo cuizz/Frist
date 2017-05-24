@@ -8,5 +8,6 @@
     <color name="darkturquoise">#2b2b2b</color>
     <color name="menu_bg">#2b2b2b</color>
     <color name="menu_click_bg">#515151</color>
+    <color name="menu_click_bgs">#500000</color>
     <color name="comment_popup_tx_bg">#c7c7c7</color>
 </resources>

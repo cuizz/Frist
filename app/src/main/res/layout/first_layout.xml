@@ -36,7 +36,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin"
-
                 app:popupTheme="@style/OverflowMenuStyle">
 
             </android.support.v7.widget.Toolbar>
@@ -87,28 +86,28 @@
                         android:id="@+id/knife1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/button_shape"
                         android:layout_margin="10dp"
-                        android:textColor="#fff"
-                        android:text="popup" />
+                        android:background="@drawable/button_shape"
+                        android:text="popup"
+                        android:textColor="#fff" />
 
                     <Button
                         android:id="@+id/knife2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/button_shape"
                         android:layout_margin="10dp"
-                        android:textColor="#fff"
-                        android:text="popup" />
+                        android:background="@drawable/button_shape"
+                        android:text="popup"
+                        android:textColor="#fff" />
 
                     <Button
                         android:id="@+id/knife3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:textColor="#fff"
                         android:background="@drawable/button_shape"
-                        android:text="popup" />
+                        android:text="popup"
+                        android:textColor="#fff" />
 
                 </LinearLayout>
             </LinearLayout>

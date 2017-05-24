@@ -31,7 +31,6 @@ public class HttpTask extends AsyncTask<Void, Void, String> {
     ProgressDialog mpDialog;
     Context mContent;
     String msgToShow;
-
     int httpTpye;
     int mTag;
     String mUrl;
@@ -51,9 +50,8 @@ public class HttpTask extends AsyncTask<Void, Void, String> {
         super.onPreExecute();
         mpDialog = new ProgressDialog(mContent, ProgressDialog.THEME_HOLO_LIGHT);
 //        mpDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);//设置风格为圆形进度条
-        mpDialog.setMessage(msgToShow);
+        mpDialog.setMessage("正在加载。。。");
         mpDialog.setCancelable(true);
-
         mpDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
             @Override
             public void onCancel(DialogInterface dialog) {

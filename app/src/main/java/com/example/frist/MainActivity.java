@@ -21,6 +21,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.frist.activity.AdActivity;
 import com.example.frist.view.AutoPopwindow;
 import com.example.frist.view.FromBottomPopwindow;
 import com.example.frist.view.ScalePopwindow;
@@ -52,8 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.button)
     public void onclick(View view) {
-        Intent intent=new Intent(this,SecondActivity.class);
-        startActivity(intent);
+        Utils.startActivity(this,SecondActivity.class);
     }
 
     @BindViews({R.id.knife1, R.id.knife2, R.id.knife3})
@@ -140,8 +140,7 @@ public class MainActivity extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ThirdActivity.class);
-                MainActivity.this.startActivity(intent);
+                Utils.startActivity(MainActivity.this, ThirdActivity.class);
             }
         });
 
@@ -157,20 +156,16 @@ public class MainActivity extends AppCompatActivity {
             public boolean onMenuItemClick(MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.menu1:
-                      Intent intent=new Intent(MainActivity.this,SwipeLayoutActivity.class);
-                       MainActivity.this.startActivity(intent);
+                        Utils.startActivity(MainActivity.this,SwipeLayoutActivity.class);
                         break;
                     case R.id.menu2:
-                        Intent intents=new Intent(MainActivity.this,WebActivity.class);
-                        MainActivity.this.startActivity(intents);
+                        Utils.startActivity(MainActivity.this,WebActivity.class);
                         break;
                     case R.id.menu3:
-                        Intent intentss=new Intent(MainActivity.this,TabActivity.class);
-                        MainActivity.this.startActivity(intentss);
+                        Utils.startActivity(MainActivity.this,TabActivity.class);
                         break;
                     case R.id.menu4:
-                        Intent intentsss=new Intent(MainActivity.this,SecondActivity.class);
-                        MainActivity.this.startActivity(intentsss);
+                        Utils.startActivity(MainActivity.this,SecondActivity.class);
                         break;
                 }
                 return true;

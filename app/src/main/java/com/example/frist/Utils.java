@@ -2,6 +2,7 @@ package com.example.frist;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Environment;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -51,7 +52,10 @@ public class Utils {
             dialog.dismiss();
         }
     }
-
+    public static void startActivity(Context context,Class classs){
+        Intent intent=new Intent(context,classs);
+        context.startActivity(intent);
+    }
     public static String md5(String string) {
         byte[] hash;
         try {
