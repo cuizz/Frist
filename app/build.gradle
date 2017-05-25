@@ -20,9 +20,9 @@ android {
         }
     }
     greendao {
-        schemaVersion 5
+        schemaVersion 8
         daoPackage 'com.example.frist.greendao.gen'
-        targetGenDir 'src/menu/java'
+        targetGenDir 'src/main/java'
     }
 }
 repositories {
@@ -38,17 +38,17 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.1.1'
-    compile 'com.android.support:cardview-v7:25.1.1'
-    compile 'com.android.support:design:25.1.1'
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:cardview-v7:25.3.1'
+    compile 'com.android.support:design:25.3.1'
     testCompile 'junit:junit:4.12'
-    compile 'com.google.android.gms:play-services-appindexing:8.4.0'
+    compile 'com.google.android.gms:play-services-appindexing:9.8.0'
     compile 'net.yanzm:loopviewpager:25.0.1'
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:v2.0.1'
     //图片的加载框架
     compile 'com.github.bumptech.glide:glide:3.7.0'
-    compile 'com.android.support:support-v4:25.1.0'
-    compile 'com.android.support:recyclerview-v7:25.1.1'
+    compile 'com.android.support:support-v4:25.3.1'
+    compile 'com.android.support:recyclerview-v7:25.3.1'
     //网络请求
     compile 'com.squareup.okhttp:okhttp:2.1.0'
     compile 'com.squareup.phrase:phrase:1.0.3'

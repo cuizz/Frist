@@ -1,10 +1,10 @@
 package com.example.frist.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
 
@@ -29,13 +29,11 @@ public class AdActivity extends AppCompatActivity {
             switch (msg.what) {
                 case 0:
                     long currenttimes = System.currentTimeMillis();
-                    if (currenttimes - currenttime <= 5000) {
+                    if (currenttimes - currenttime < 5000) {
                         long time = (currenttimes - currenttime) / 1000;
-                        textView.setText("跳过  " + String.valueOf(5L - time));
+                        textView.setText(" 跳过 " + String.valueOf(5L - time)+" ");
                     } else {
-                        Utils.startActivity(AdActivity.this,MainActivity.class);
-                        finish();
-                        timer.cancel();
+                       startActivity();
                     }
                     break;
             }
@@ -53,6 +51,12 @@ public class AdActivity extends AppCompatActivity {
         timer = new Timer();
         timer.schedule(new TimeRask(), 0, 1000);
         currenttime = System.currentTimeMillis();
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               startActivity();
+            }
+        });
     }
 
     class TimeRask extends TimerTask {
@@ -63,6 +67,11 @@ public class AdActivity extends AppCompatActivity {
             message.arg1 = 5;
             handler.sendMessage(message);
         }
+    }
+    public void startActivity(){
+        Utils.startActivity(AdActivity.this,MainActivity.class);
+        finish();
+        timer.cancel();
     }
 }
 

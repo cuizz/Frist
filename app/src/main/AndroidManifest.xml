@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.frist">
 
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
-    <uses-permission android:name="android.permission.CALL_PHONE"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> <!-- 往sdcard中写入数据的权限==== -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 在sdcard中创建/删除文件的权限 -->
     <application
@@ -21,24 +21,27 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".activity.RunErActivity"
+            android:theme="@style/FuTheme"/>
+        <activity
             android:name=".MainActivity"
             android:theme="@style/FuTheme">
         </activity>
         <activity
             android:name=".SecondActivity"
-            android:theme="@style/FuTheme"></activity>
+            android:theme="@style/FuTheme"/>
         <activity
             android:name=".ThirdActivity"
-            android:theme="@style/FuTheme"></activity>
+            android:theme="@style/FuTheme"/>
         <activity
             android:name=".SwipeLayoutActivity"
-            android:theme="@style/FuTheme"></activity>
+            android:theme="@style/FuTheme"/>
         <activity
             android:name=".WebActivity"
-            android:theme="@style/FuTheme"></activity>
+            android:theme="@style/FuTheme"/>
         <activity
             android:name=".TabActivity"
-            android:theme="@style/FuTheme"></activity>
+            android:theme="@style/FuTheme"/>
 
         <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->

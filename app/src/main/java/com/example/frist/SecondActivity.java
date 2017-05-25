@@ -16,6 +16,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.yqritc.recyclerviewflexibledivider.HorizontalDividerItemDecoration;
 
+import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
@@ -38,6 +39,7 @@ public class SecondActivity extends TopBarBaseActivity implements BaseQuickAdapt
 
     @Override
     protected void init(Bundle savedInstanceState) {
+        EventBus.getDefault().register(this);
         ButterKnife.bind(this);
         setTitle("新闻");
         setTopLeftButton(R.drawable.ic_arrow_back, new OnClickListener() {
@@ -77,14 +79,14 @@ public class SecondActivity extends TopBarBaseActivity implements BaseQuickAdapt
                         .marginResId(R.dimen.leftmargin, R.dimen.rightmargin)
                         .build());
                 adapter=new MulRecyAdapter(SecondActivity.this,responses);
-                adapter.setOnLoadMoreListener(this);
+                //adapter.setOnLoadMoreListener(this);
                 adapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_LEFT);
                 recycleView.setAdapter(adapter);
                 mCurrentCounter = adapter.getData().size();
                 break;
             case 1:
-                responses.clear();
-                responses=new Gson().fromJson(event.getContent(),new TypeToken<List<Photos>>(){}.getType());
+                //responses.clear();
+                List<Photos> responses=new Gson().fromJson(event.getContent(),new TypeToken<List<Photos>>(){}.getType());
                 adapter.addData(responses);
                 swipeRefreshLayout.setRefreshing(false);
                 break;
@@ -94,8 +96,7 @@ public class SecondActivity extends TopBarBaseActivity implements BaseQuickAdapt
     @Override
     public void onLoadMoreRequested() {
         if (adapter.getData().size() < PAGE_SIZE) {
-           // adapter.loadMoreEnd(true);
-           // adapter.loa
+           // adapter.loa;
         } else {
             if (mCurrentCounter >= 100) {
 //                    pullToRefreshAdapter.loadMoreEnd();//default visible
@@ -129,12 +130,18 @@ public class SecondActivity extends TopBarBaseActivity implements BaseQuickAdapt
                     @Override
                     public void run() {
                         HashMap<String,String> map=new HashMap<>();
-                        new HttpTask(SecondActivity.this," http://c.m.163.com/nc/article/headline/T1348647909107/60-20.html",0,1,"",map).execute();
+                        new HttpTask(SecondActivity.this," http://c.3g.163.com/photo/api/list/0096/4GJ60096.json",0,1,"",map).execute();
                        // textView.setText("刷新");
                     }
                 });
               //  pullToRefreshAdapter.setEnableLoadMore(true);
             }
         }, 1000);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
     }
 }

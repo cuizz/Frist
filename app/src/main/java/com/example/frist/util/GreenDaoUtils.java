@@ -7,8 +7,8 @@ import com.example.frist.greendao.gen.DaoSession;
  */
 
 public class GreenDaoUtils {
-   private DaoSession daoSession;
-    public DaoSession getDaoSession(){
+   private static DaoSession daoSession;
+    public static DaoSession getDaoSession(){
         if(daoSession==null){
             daoSession=GreenDaoManager.getInstance().getSession();
         }

@@ -1,6 +1,5 @@
 package com.example.frist;
 
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -21,7 +20,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.frist.activity.AdActivity;
+import com.example.frist.activity.RunErActivity;
+import com.example.frist.bean.Photo;
+import com.example.frist.util.GreenDaoUtils;
 import com.example.frist.view.AutoPopwindow;
 import com.example.frist.view.FromBottomPopwindow;
 import com.example.frist.view.ScalePopwindow;
@@ -53,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.button)
     public void onclick(View view) {
-        Utils.startActivity(this,SecondActivity.class);
+        Utils.startActivity(this,RunErActivity.class);
     }
 
     @BindViews({R.id.knife1, R.id.knife2, R.id.knife3})
@@ -92,14 +93,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.first_layout);
         ButterKnife.bind(this);
-        // List<Student>list=GreenDaoManager.getInstance().getSession().getStudentDao().loadAll();
-        // for(int i=0;i<list.size();i++){
-        //    Student student=list.get(i);
-        // student.setYear(i+15+"");
-        // student.setId(Long.valueOf(i)+1L);
-        // list.add(student);
-        // }
-        // GreenDaoManager.getInstance().getSession().getStudentDao().updateInTx(list);
+        //Photo users=new Photo();
+       // users.setId(1L);
+       // users.setName("haha");
+       // GreenDaoUtils.getDaoSession().insert(users);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.coll_toolbar);
         ImageView imageView = (ImageView) findViewById(R.id.imageview);

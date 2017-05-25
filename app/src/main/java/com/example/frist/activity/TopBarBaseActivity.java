@@ -1,7 +1,6 @@
 package com.example.frist.activity;
 
 import android.os.Bundle;
-import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -15,18 +14,13 @@ import android.widget.TextView;
 
 import com.example.frist.R;
 
-import org.greenrobot.eventbus.EventBus;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 /**
  * Created by Matthew_Chen on 2017/4/14.
  */
 
 public abstract class TopBarBaseActivity extends AppCompatActivity {
 
-    Toolbar toolbar;
+   public  Toolbar toolbar;
     FrameLayout viewContent;
     TextView tvTitle;
 
@@ -44,22 +38,20 @@ public abstract class TopBarBaseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base_top_bar);
-        EventBus.getDefault().register(this);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
         viewContent = (FrameLayout) findViewById(R.id.viewContent);
+        toolbar.setTitle("");
         tvTitle = (TextView) findViewById(R.id.tvTitle);
         //将继承 TopBarBaseActivity 的布局解析到 FrameLayout 里面
         LayoutInflater.from(this).inflate(getContentView(), viewContent);
-
         //初始化设置 Toolbar
-
-       // ActionBar actionBar = getSupportActionBar();
-       // if (actionBar != null) {
-           // actionBar.setDisplayHomeAsUpEnabled(false);
-       // }
-
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(false);
+        }
+        setSupportActionBar(toolbar);
         init(savedInstanceState);
+
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -125,18 +117,6 @@ public abstract class TopBarBaseActivity extends AppCompatActivity {
         }
         return true;
     }
-
-    @Override
-    public boolean onPrepareOptionsMenu(Menu menu) {
-        if (menuResId != 0) {
-           // menu.findItem(R.id.menu_1).setIcon(menuResId);
-        }
-        if (!TextUtils.isEmpty(menuStr)){
-          //  menu.findItem(R.id.menu_1).setTitle(menuStr);
-        }
-        return super.onPrepareOptionsMenu(menu);
-    }
-
 }
 
 
