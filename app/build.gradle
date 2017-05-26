@@ -20,7 +20,7 @@ android {
         }
     }
     greendao {
-        schemaVersion 8
+        schemaVersion 13
         daoPackage 'com.example.frist.greendao.gen'
         targetGenDir 'src/main/java'
     }

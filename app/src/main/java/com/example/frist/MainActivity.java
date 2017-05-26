@@ -21,8 +21,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.frist.activity.RunErActivity;
-import com.example.frist.bean.Photo;
-import com.example.frist.util.GreenDaoUtils;
 import com.example.frist.view.AutoPopwindow;
 import com.example.frist.view.FromBottomPopwindow;
 import com.example.frist.view.ScalePopwindow;
@@ -93,10 +91,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.first_layout);
         ButterKnife.bind(this);
-        //Photo users=new Photo();
-       // users.setId(1L);
-       // users.setName("haha");
-       // GreenDaoUtils.getDaoSession().insert(users);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.coll_toolbar);
         ImageView imageView = (ImageView) findViewById(R.id.imageview);

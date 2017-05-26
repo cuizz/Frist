@@ -8,10 +8,13 @@ import com.example.frist.DataMigrate.Migration;
 import com.example.frist.DataMigrate.MigrationHelper;
 import com.example.frist.DataMigrate.V1Migration;
 import com.example.frist.DataMigrate.V2Migration;
+import com.example.frist.bean.Photo;
 import com.example.frist.greendao.gen.DaoMaster;
+import com.example.frist.greendao.gen.PhotoDao;
 import com.example.frist.greendao.gen.StudentDao;
 import com.example.frist.greendao.gen.TeacherDao;
 import com.example.frist.greendao.gen.UserDao;
+import com.example.frist.greendao.gen.UsersDao;
 
 import java.util.Set;
 import java.util.SortedMap;
@@ -50,8 +53,10 @@ public class MySQLiteOpenHelper extends DaoMaster.OpenHelper  {
         Log.i("greenDAO", "Upgrading schema from version " + oldVersion + " to " + newVersion + " by dropping all tables");
         MigrationHelper.migrate(db,
                 UserDao.class,
-               StudentDao.class,
-                TeacherDao.class);
+                StudentDao.class,
+                TeacherDao.class,
+                PhotoDao.class,
+                UsersDao.class);
 
 //        SortedMap<Integer, Migration> migrations = ALL_MIGRATIONS.subMap(oldVersion, newVersion);
 //        executeMigrations(db, migrations.keySet());
