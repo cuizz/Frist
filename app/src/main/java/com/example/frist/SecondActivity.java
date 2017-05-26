@@ -85,9 +85,9 @@ public class SecondActivity extends TopBarBaseActivity implements BaseQuickAdapt
                 mCurrentCounter = adapter.getData().size();
                 break;
             case 1:
-                //responses.clear();
-                List<Photos> responses=new Gson().fromJson(event.getContent(),new TypeToken<List<Photos>>(){}.getType());
-                adapter.addData(responses);
+                List<Photos> responsess=new Gson().fromJson(event.getContent(),new TypeToken<List<Photos>>(){}.getType());
+                responses.addAll(0,responsess);
+                adapter.notifyDataSetChanged();
                 swipeRefreshLayout.setRefreshing(false);
                 break;
         }
