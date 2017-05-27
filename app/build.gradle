@@ -43,7 +43,7 @@ dependencies {
     compile 'com.android.support:design:25.3.1'
     testCompile 'junit:junit:4.12'
     compile 'com.google.android.gms:play-services-appindexing:9.8.0'
-    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:v2.0.3'
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:v2.0.9'
     //图片的加载框架
     compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'com.android.support:support-v4:25.3.1'
