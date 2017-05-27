@@ -5,13 +5,18 @@ import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.example.frist.activity.TopBarBaseActivity;
+import com.example.frist.adapter.HRecycleViewAdapter;
 import com.example.frist.adapter.MulRecyAdapter;
 import com.example.frist.bean.Photos;
 import com.example.frist.http.HttpEvent;
 import com.example.frist.http.HttpTask;
+import com.example.frist.view.AutoPopwindow;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.yqritc.recyclerviewflexibledivider.HorizontalDividerItemDecoration;
@@ -41,7 +46,7 @@ public class SecondActivity extends TopBarBaseActivity implements BaseQuickAdapt
     protected void init(Bundle savedInstanceState) {
         EventBus.getDefault().register(this);
         ButterKnife.bind(this);
-        setTitle("新闻");
+        setTitle("新闻","");
         setTopLeftButton(R.drawable.ic_arrow_back, new OnClickListener() {
             @Override
             public void onClick() {
@@ -51,7 +56,7 @@ public class SecondActivity extends TopBarBaseActivity implements BaseQuickAdapt
         setTopRightButton("sss", R.drawable.ic_add, new OnClickListener() {
             @Override
             public void onClick() {
-
+              //  AutoPopwindow popwindow=new AutoPopwindow(SecondActivity.this,toolbar,0);
             }
         });
         initViews();
@@ -83,38 +88,29 @@ public class SecondActivity extends TopBarBaseActivity implements BaseQuickAdapt
                 adapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_LEFT);
                 recycleView.setAdapter(adapter);
                 mCurrentCounter = adapter.getData().size();
+                View view=LayoutInflater.from(SecondActivity.this).inflate(R.layout.ho_recycle,null);
+                RecyclerView recyclerView=(RecyclerView) view.findViewById(R.id.recycleView);
+                LinearLayoutManager manager=new LinearLayoutManager(SecondActivity.this);
+                manager.setOrientation(LinearLayoutManager.HORIZONTAL);
+                recyclerView.setLayoutManager(manager);
+                recyclerView.setAdapter(new HRecycleViewAdapter(Utils.getbean()));
+                adapter.addHeaderView(view,0);
                 break;
             case 1:
                 List<Photos> responsess=new Gson().fromJson(event.getContent(),new TypeToken<List<Photos>>(){}.getType());
-                responses.addAll(0,responsess);
+                //responses.addAll(0,responsess.get(0));
+                responses.add(0,responsess.get(0));
                 adapter.notifyDataSetChanged();
                 swipeRefreshLayout.setRefreshing(false);
+                adapter.addFooterView(LayoutInflater.from(SecondActivity.this).inflate(R.layout.footer,null),adapter.getData().size());
                 break;
         }
     }
     boolean isErr=false;
     @Override
     public void onLoadMoreRequested() {
-        if (adapter.getData().size() < PAGE_SIZE) {
-           // adapter.loa;
-        } else {
-            if (mCurrentCounter >= 100) {
-//                    pullToRefreshAdapter.loadMoreEnd();//default visible
-                //adapter.loadMoreEnd(mLoadMoreEndGone);//true is gone,false is visible
-            } else {
-                if (isErr) {
-                    adapter.addData(responses);
-                    mCurrentCounter = adapter.getData().size();
-                   // adapter.loadMoreComplete();
-                } else {
-                    isErr = true;
-                   // Toast.makeText(PullToRefreshUseActivity.this, R.string.network_err, Toast.LENGTH_LONG).show();
-                    //adapter.loadMoreFail();
-
-                }
-            }
-          //  mSwipeRefreshLayout.setEnabled(true);
-        }
+        adapter.addData(responses);
+        adapter.loadComplete();
     }
     @Override
     public void onRefresh() {

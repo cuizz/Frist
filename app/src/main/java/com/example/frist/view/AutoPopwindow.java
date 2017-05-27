@@ -58,6 +58,5 @@ public class AutoPopwindow {
                 popupWindow.showAtLocation(v,Gravity.NO_GRAVITY,location[0]+v.getMeasuredWidth()/2,location[1]+v.getMeasuredHeight()/2);
                 break;
         }
-
     }
 }

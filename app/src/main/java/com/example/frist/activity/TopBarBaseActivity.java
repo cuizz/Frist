@@ -23,7 +23,7 @@ public abstract class TopBarBaseActivity extends AppCompatActivity {
    public  Toolbar toolbar;
     FrameLayout viewContent;
     TextView tvTitle;
-
+    TextView addTv;
     OnClickListener onClickListenerTopLeft;
     OnClickListener onClickListenerTopRight;
 
@@ -42,6 +42,7 @@ public abstract class TopBarBaseActivity extends AppCompatActivity {
         viewContent = (FrameLayout) findViewById(R.id.viewContent);
         toolbar.setTitle("");
         tvTitle = (TextView) findViewById(R.id.tvTitle);
+        addTv=(TextView)findViewById(R.id.add);
         //将继承 TopBarBaseActivity 的布局解析到 FrameLayout 里面
         LayoutInflater.from(this).inflate(getContentView(), viewContent);
         //初始化设置 Toolbar
@@ -80,9 +81,12 @@ public abstract class TopBarBaseActivity extends AppCompatActivity {
         });
     }
 
-    protected void setTitle(String title){
+    protected void setTitle(String title,String addstr){
         if (!TextUtils.isEmpty(title)){
             tvTitle.setText(title);
+        }
+        if (!TextUtils.isEmpty(addstr)){
+            addTv.setText(addstr);
         }
     }
 
@@ -109,7 +113,6 @@ public abstract class TopBarBaseActivity extends AppCompatActivity {
     protected abstract int getContentView();
     protected abstract void init(Bundle savedInstanceState);
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         if (menuResId != 0 || !TextUtils.isEmpty(menuStr)){
@@ -117,6 +120,7 @@ public abstract class TopBarBaseActivity extends AppCompatActivity {
         }
         return true;
     }
+
 }
 
 

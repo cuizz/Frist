@@ -43,8 +43,7 @@ dependencies {
     compile 'com.android.support:design:25.3.1'
     testCompile 'junit:junit:4.12'
     compile 'com.google.android.gms:play-services-appindexing:9.8.0'
-    compile 'net.yanzm:loopviewpager:25.0.1'
-    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:v2.0.1'
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:v2.0.3'
     //图片的加载框架
     compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'com.android.support:support-v4:25.3.1'
@@ -76,5 +75,7 @@ dependencies {
     compile 'com.daimajia.numberprogressbar:library:1.4@aar'
     //分割线
     compile 'com.yqritc:recyclerview-flexibledivider:1.4.0'
+    //recycleView上拉刷新
+    compile 'com.jcodecraeer:xrecyclerview:1.3.2'
     compile files('libs/library.jar')
 }

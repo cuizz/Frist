@@ -9,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.frist.bean.HorizontalBean;
+
 import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
@@ -55,6 +57,32 @@ public class Utils {
     public static void startActivity(Context context,Class classs){
         Intent intent=new Intent(context,classs);
         context.startActivity(intent);
+    }
+    public static int[] getImage(){
+        int [] image=new int[]{R.mipmap.face1,R.mipmap.face2,R.mipmap.face3,R.mipmap.face4,R.mipmap.face5,R.mipmap.face6,R.mipmap.face7,R.mipmap.face8};
+        return image;
+    }
+    public static List<String> getlists(){
+        List<String>list=new ArrayList<>();
+        list.add("搞笑");
+        list.add("音乐");
+        list.add("小品");
+        list.add("现场");
+        list.add("开眼");
+        list.add("影视");
+        list.add("萌物");
+        list.add("明星");
+        return list;
+    }
+    public static List<HorizontalBean>getbean(){
+        List<HorizontalBean>list=new ArrayList<>();
+        for(int i=0;i<getImage().length;i++){
+            HorizontalBean bean=new HorizontalBean();
+            bean.setImage(getImage()[i]);
+            bean.setName(getlists().get(i));
+            list.add(bean);
+        }
+        return list;
     }
     public static String md5(String string) {
         byte[] hash;
