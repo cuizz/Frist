@@ -85,7 +85,7 @@ public class SwipeLayoutActivity extends AppCompatActivity {
         recyclerView.setAdapter(new RecyclerViewAdapter(this,students));
     }
 
-    public class QuickAdapter extends BaseQuickAdapter<Student> {
+    public class QuickAdapter extends BaseQuickAdapter<Student,BaseViewHolder> {
         public QuickAdapter() {
             super(R.layout.swipe_item, students);
         }

@@ -86,6 +86,7 @@ public class SecondActivity extends TopBarBaseActivity implements BaseQuickAdapt
                 adapter=new MulRecyAdapter(SecondActivity.this,responses);
                 //adapter.setOnLoadMoreListener(this);
                 adapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_LEFT);
+                adapter.seta(SecondActivity.this);
                 recycleView.setAdapter(adapter);
                 mCurrentCounter = adapter.getData().size();
                 View view=LayoutInflater.from(SecondActivity.this).inflate(R.layout.ho_recycle,null);
@@ -110,7 +111,7 @@ public class SecondActivity extends TopBarBaseActivity implements BaseQuickAdapt
     @Override
     public void onLoadMoreRequested() {
         adapter.addData(responses);
-        adapter.loadComplete();
+        //adapter.loadComplete();
     }
     @Override
     public void onRefresh() {

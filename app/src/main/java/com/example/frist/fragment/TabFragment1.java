@@ -43,7 +43,7 @@ public class TabFragment1 extends BaseFragment{
        // recyclerView.setNestedScrollingEnabled(false);
         recyclerView.setAdapter(new QuickAdapter());
     }
-    public class QuickAdapter extends BaseQuickAdapter<Student> {
+    public class QuickAdapter extends BaseQuickAdapter<Student,BaseViewHolder> {
         public QuickAdapter() {
             super(R.layout.rece_item, students);
         }

@@ -15,7 +15,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
  * Created by Administrator on 2017/4/20.
  */
 
-public class HRecycleViewAdapter extends BaseQuickAdapter<HorizontalBean> {
+public class HRecycleViewAdapter extends BaseQuickAdapter<HorizontalBean,BaseViewHolder> {
 
     public HRecycleViewAdapter(List<HorizontalBean>phonto) {
         super(R.layout.hrece_mulitem,phonto);

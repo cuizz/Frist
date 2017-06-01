@@ -15,7 +15,7 @@ import java.util.List;
  * Created by Administrator on 2017/4/20.
  */
 
-public class RecycleViewAdapter extends BaseQuickAdapter<Photos> {
+public class RecycleViewAdapter extends BaseQuickAdapter<Photos,BaseViewHolder> {
 
     public RecycleViewAdapter(List<Photos>phonto) {
         super(R.layout.rece_item,phonto);

@@ -1,6 +1,7 @@
 package com.example.frist.adapter;
 
 import android.content.Context;
+import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ImageView;
@@ -13,7 +14,10 @@ import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.example.frist.R;
+import com.example.frist.SecondActivity;
 import com.example.frist.TApplication;
+import com.example.frist.TabActivity;
+import com.example.frist.Utils;
 import com.example.frist.bean.Photos;
 
 import java.util.List;
@@ -22,8 +26,8 @@ import java.util.List;
  * Created by Administrator on 2017/5/24.
  */
 
-public class MulRecyAdapter extends BaseMultiItemQuickAdapter<Photos> {
-
+public class MulRecyAdapter extends BaseMultiItemQuickAdapter<Photos,BaseViewHolder> implements BaseQuickAdapter.OnItemClickListener,BaseQuickAdapter.OnItemChildClickListener{
+    SecondActivity activity;
     public MulRecyAdapter(Context context, List data) {
         super(data);
         addItemType(1, R.layout.rece_item);
@@ -75,5 +79,18 @@ public class MulRecyAdapter extends BaseMultiItemQuickAdapter<Photos> {
                 break;
         }
     }
+    public void seta(SecondActivity activity){
+        this.activity=activity;
+    }
 
+    @Override
+    public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+        Utils.startActivity(activity,TabActivity.class);
+    }
+
+    @Override
+    public boolean onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+        Utils.startActivity(activity,TabActivity.class);
+        return false;
+    }
 }

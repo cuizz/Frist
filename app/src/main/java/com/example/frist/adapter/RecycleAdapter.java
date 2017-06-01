@@ -14,7 +14,7 @@ import java.util.List;
  * Created by Administrator on 2017/4/20.
  */
 
-public class RecycleAdapter extends BaseSectionQuickAdapter<OrderItem> {
+public class RecycleAdapter extends BaseSectionQuickAdapter<OrderItem,BaseViewHolder> {
     public RecycleAdapter(int layoutResId, int sectionHeadResId, List data) {
         super(layoutResId, sectionHeadResId, data);
     }
