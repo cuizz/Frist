@@ -1,10 +1,12 @@
 package com.example.frist.activity;
 
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
 
 import com.example.frist.R;
+import com.example.frist.view.CustomDialog;
 import com.example.frist.view.FromBottomPopwindow;
 
 /**
@@ -12,6 +14,7 @@ import com.example.frist.view.FromBottomPopwindow;
  */
 
 public class RunErActivity extends TopBarBaseActivity implements View.OnClickListener{
+    CustomDialog dialog;
     @Override
     protected int getContentView() {
         return R.layout.second_layout;
@@ -34,6 +37,10 @@ public class RunErActivity extends TopBarBaseActivity implements View.OnClickLis
                 popwindow.showPopupWindow();
             }
         });
+        dialog = new CustomDialog(this,R.style.CustomDialog);
+        dialog.setContent("加载中");
+        dialog.setDisable(true);
+        dialog.show();
     }
 
     @Override

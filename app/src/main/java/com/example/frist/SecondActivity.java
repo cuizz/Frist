@@ -6,8 +6,8 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
+import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.example.frist.activity.TopBarBaseActivity;
@@ -16,7 +16,6 @@ import com.example.frist.adapter.MulRecyAdapter;
 import com.example.frist.bean.Photos;
 import com.example.frist.http.HttpEvent;
 import com.example.frist.http.HttpTask;
-import com.example.frist.view.AutoPopwindow;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.yqritc.recyclerviewflexibledivider.HorizontalDividerItemDecoration;
@@ -31,7 +30,9 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class SecondActivity extends TopBarBaseActivity implements BaseQuickAdapter.RequestLoadMoreListener, SwipeRefreshLayout.OnRefreshListener{
+public class SecondActivity extends TopBarBaseActivity implements
+        BaseQuickAdapter.RequestLoadMoreListener, SwipeRefreshLayout.OnRefreshListener,
+        BaseQuickAdapter.OnItemClickListener,BaseQuickAdapter.OnItemChildClickListener{
     @BindView(R.id.swipeLayout)
     SwipeRefreshLayout swipeRefreshLayout;
     @BindView(R.id.recycleView)
@@ -96,6 +97,9 @@ public class SecondActivity extends TopBarBaseActivity implements BaseQuickAdapt
                 recyclerView.setLayoutManager(manager);
                 recyclerView.setAdapter(new HRecycleViewAdapter(Utils.getbean()));
                 adapter.addHeaderView(view,0);
+                adapter.setOnLoadMoreListener(this,recyclerView);
+                adapter.setOnItemClickListener(this);
+                adapter.setOnItemChildClickListener(this);
                 break;
             case 1:
                 List<Photos> responsess=new Gson().fromJson(event.getContent(),new TypeToken<List<Photos>>(){}.getType());
@@ -103,15 +107,50 @@ public class SecondActivity extends TopBarBaseActivity implements BaseQuickAdapt
                 responses.add(0,responsess.get(0));
                 adapter.notifyDataSetChanged();
                 swipeRefreshLayout.setRefreshing(false);
-                adapter.addFooterView(LayoutInflater.from(SecondActivity.this).inflate(R.layout.footer,null),adapter.getData().size());
+                break;
+            case 3:
+                if(event.getContent()==null){
+                    adapter.addFooterView(LayoutInflater.from(SecondActivity.this).inflate(R.layout.footer,null),adapter.getData().size());
+                    adapter.setEnableLoadMore(false);
+                }else{
+                    List<Photos> responsesss=new Gson().fromJson(event.getContent(),new TypeToken<List<Photos>>(){}.getType());
+                    adapter.addData(responsesss);
+                }
+                adapter.loadMoreComplete();
+                isErr=false;
                 break;
         }
     }
     boolean isErr=false;
     @Override
     public void onLoadMoreRequested() {
-        adapter.addData(responses);
-        //adapter.loadComplete();
+        recycleView.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                // if (mCurrentCounter >= TOTAL_COUNTER) {
+                //Data are all loaded.
+                HashMap<String,String> map=new HashMap<>();
+                if(isErr){
+                    new HttpTask(SecondActivity.this," http://c.3g.163.com/photo/api/list/0096/4GJ60096.json",0,3,"",map).execute();
+                }else{
+                    new HttpTask(SecondActivity.this," http://c.3g.163.com/photo/api/list/0096/4GJ.json",0,3,"",map).execute();
+                }
+                //  adapter.loadMoreEnd();
+                // } else {
+                // if (isErr) {
+                //Successfully get more data
+                // adapter.addData(DataServer.getSampleData(PAGE_SIZE));
+                // mCurrentCounter = adapter.getData().size();
+                // adapter.loadMoreComplete();
+                //  } else {
+                //Get more data failed
+                // isErr = true;
+                //Toast.makeText(PullToRefreshUseActivity.this, R.string.network_err, Toast.LENGTH_LONG).show();
+                //mQuickAdapter.loadMoreFail();
+                // }
+            }
+            // }
+        }, 1000);
     }
     @Override
     public void onRefresh() {
@@ -140,5 +179,21 @@ public class SecondActivity extends TopBarBaseActivity implements BaseQuickAdapt
     protected void onDestroy() {
         super.onDestroy();
         EventBus.getDefault().unregister(this);
+    }
+    @Override
+    public boolean onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+        switch (view.getId()){
+            case R.id.leftimage:
+                Toast.makeText(this,"我点击了图片",Toast.LENGTH_SHORT).show();
+                break;
+        }
+        return false;
+    }
+
+    @Override
+    public void onItemClick(BaseQuickAdapter adapters, View view, int position) {
+        Photos photos=adapter.getData().get(position);
+        String value=photos.getDatetime();
+        Utils.startActivity(this,TabActivity.class);
     }
 }

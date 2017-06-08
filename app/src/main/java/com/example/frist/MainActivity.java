@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Utils.startActivity(MainActivity.this, ThirdActivity.class);
+                finish();
             }
         });
 
@@ -157,6 +157,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.menu4:
                         Utils.startActivity(MainActivity.this,SecondActivity.class);
+                        break;
+                    case R.id.section:
+                        Utils.startActivity(MainActivity.this,ThirdActivity.class);
                         break;
                 }
                 return true;

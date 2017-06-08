@@ -1,7 +1,6 @@
 package com.example.frist.adapter;
 
 import android.content.Context;
-import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ImageView;
@@ -11,13 +10,10 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
-import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.example.frist.R;
 import com.example.frist.SecondActivity;
 import com.example.frist.TApplication;
-import com.example.frist.TabActivity;
-import com.example.frist.Utils;
 import com.example.frist.bean.Photos;
 
 import java.util.List;
@@ -26,7 +22,7 @@ import java.util.List;
  * Created by Administrator on 2017/5/24.
  */
 
-public class MulRecyAdapter extends BaseMultiItemQuickAdapter<Photos,BaseViewHolder> implements BaseQuickAdapter.OnItemClickListener,BaseQuickAdapter.OnItemChildClickListener{
+public class MulRecyAdapter extends BaseMultiItemQuickAdapter<Photos,BaseViewHolder> {
     SecondActivity activity;
     public MulRecyAdapter(Context context, List data) {
         super(data);
@@ -39,7 +35,8 @@ public class MulRecyAdapter extends BaseMultiItemQuickAdapter<Photos,BaseViewHol
     protected void convert(BaseViewHolder helper, Photos item) {
         switch (helper.getItemViewType()) {
             case 1:
-                helper.setText(R.id.tv_desc, item.getSetname());
+                helper.setText(R.id.tv_desc, item.getSetname())
+                .addOnClickListener(R.id.leftimage);
                 RelativeLayout.LayoutParams param=new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
                 RelativeLayout.LayoutParams paramss=new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
                 WindowManager wms = (WindowManager) TApplication.getInstance()
@@ -81,16 +78,5 @@ public class MulRecyAdapter extends BaseMultiItemQuickAdapter<Photos,BaseViewHol
     }
     public void seta(SecondActivity activity){
         this.activity=activity;
-    }
-
-    @Override
-    public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-        Utils.startActivity(activity,TabActivity.class);
-    }
-
-    @Override
-    public boolean onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
-        Utils.startActivity(activity,TabActivity.class);
-        return false;
     }
 }

@@ -73,7 +73,7 @@ public class ThirdActivity extends AppCompatActivity {
         });
       //  textView = (TextView) findViewById(R.id.textview);
         setSupportActionBar(toolbar);
-        toolbar.setNavigationIcon(getResources().getDrawable(R.drawable.common_google_signin_btn_icon_dark));
+        toolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_arrow_back));
         //toolbar.setLogo(getResources().getDrawable(R.drawable.common_google_signin_btn_icon_dark));
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -151,7 +151,7 @@ public class ThirdActivity extends AppCompatActivity {
             case 2:
                 OrderListResponse responses=new Gson().fromJson(event.getContent(),OrderListResponse.class);
                 HotelEntityAdapter mAdapter = new HotelEntityAdapter(this);
-                GridLayoutManager manager = new GridLayoutManager(this,1);
+                GridLayoutManager manager = new GridLayoutManager(this,2);
                 //设置header
                 manager.setSpanSizeLookup(new SectionedSpanSizeLookup(mAdapter,manager));
                 recyclerView.setLayoutManager(manager);

@@ -1,25 +1,68 @@
 package com.example.frist.fragment;
 
-import com.bumptech.glide.Glide;
-import com.example.frist.R;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.widget.ImageView;
 
-import de.hdodenhof.circleimageview.CircleImageView;
+import com.bumptech.glide.Glide;
+import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.BaseViewHolder;
+import com.example.frist.R;
+import com.example.frist.bean.Student;
+import com.example.frist.util.GreenDaoManager;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import butterknife.BindView;
 
 /**
  * Created by Administrator on 2017/5/12.
  */
 
 public class TabFragment3 extends BaseFragment{
-
+    List<Student> students=new ArrayList<>();
+    @BindView(R.id.recyclerview)
+    RecyclerView recyclerView;
     @Override
     public int getLayoutID() {
-        return R.layout.tab_fragment;
+        return R.layout.recycle_item;
     }
 
     @Override
     public void initView() {
-        // View view=LayoutInflater.from(getActivity()).inflate(R.layout.tab_fragment,null);
-        CircleImageView circleImageView=(CircleImageView) view.findViewById(R.id.circleimage);
-        Glide.with(getActivity()).load("http://img.my.csdn.net/uploads/201309/01/1378037234_3539.jpg").into(circleImageView);
+        students= GreenDaoManager.getInstance().getSession().getStudentDao().loadAll();
+        for(int i=0;i<20;i++){
+            Student student=new Student();
+            student.setName("美女");
+            students.add(student);
+        }
+        LinearLayoutManager mLinearLayoutManager=new LinearLayoutManager(getActivity());
+        //解决正常情况下NestedScrollView嵌套RecycleView滑动冲突问题
+        //  mLinearLayoutManager.setSmoothScrollbarEnabled(true);
+        //  mLinearLayoutManager.setAutoMeasureEnabled(true);
+        recyclerView.setLayoutManager(mLinearLayoutManager);
+        // recyclerView.setHasFixedSize(true);
+        // recyclerView.setNestedScrollingEnabled(false);
+        recyclerView.setAdapter(new TabFragment3.QuickAdapter());
+    }
+    public class QuickAdapter extends BaseQuickAdapter<Student,BaseViewHolder> {
+        public QuickAdapter() {
+            super(R.layout.fragment3_adapter, students);
+        }
+
+        @Override
+        protected void convert(final BaseViewHolder viewHolder, Student item) {
+            viewHolder.setText(R.id.name, item.getName());
+            ImageView imageView=viewHolder.getView(R.id.imageView);
+            Glide.with(getActivity()).load("http://img.my.csdn.net/uploads/201309/01/1378037235_7476.jpg").into(imageView);
+            /*Glide.with(getActivity()).load("http://img.my.csdn.net/uploads/201309/01/1378037235_7476.jpg").
+                    asBitmap().into(new SimpleTarget<Bitmap>() {
+                @Override
+                public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
+                    viewHolder.setImageBitmap(R.id.leftimage,resource);
+                }
+            });*/
+        }
     }
 }

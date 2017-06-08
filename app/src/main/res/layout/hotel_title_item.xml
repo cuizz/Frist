@@ -30,7 +30,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:padding="10dp"
-            android:text="text"
+            android:text="更多"
             android:textSize="11sp" />
 
         <ImageView

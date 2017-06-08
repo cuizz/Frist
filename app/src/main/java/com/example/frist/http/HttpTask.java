@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.example.frist.R;
 import com.example.frist.Utils;
 import com.squareup.okhttp.Call;
 import com.squareup.okhttp.FormEncodingBuilder;
@@ -49,7 +50,6 @@ public class HttpTask extends AsyncTask<Void, Void, String> {
     protected void onPreExecute() {
         super.onPreExecute();
         mpDialog = new ProgressDialog(mContent, ProgressDialog.THEME_HOLO_LIGHT);
-//        mpDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);//设置风格为圆形进度条
         mpDialog.setMessage("正在加载。。。");
         mpDialog.setCancelable(true);
         mpDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {

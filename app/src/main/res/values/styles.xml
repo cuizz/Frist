@@ -45,4 +45,11 @@
         <item name="android:windowEnterAnimation">@anim/popupwindow_show</item>
         <item name="android:windowExitAnimation">@anim/popupwindow_exit</item>
     </style>
+
+    <!-- 自定义loading dialog -->
+    <style name="CustomDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+       <item name="colorAccent">#ff3F51B5</item>
+    </style>
 </resources>
