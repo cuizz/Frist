@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_margin="8dp"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <CheckBox
+            android:id="@+id/checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_gravity="center_vertical"
+            android:visibility="gone"/>
+
+
+        <TextView
+            android:id="@+id/all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@color/colorAccent"
+            android:padding="15dp"
+            android:text="全选"
+            android:layout_gravity="center_vertical|right"
+            android:textColor="#ffffff" />
+        <TextView
+            android:id="@+id/notall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@color/colorAccent"
+            android:padding="15dp"
+            android:text="全不选"
+            android:layout_gravity="center_vertical|right"
+            android:textColor="#ffffff" />
+        <TextView
+            android:id="@+id/delect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@color/colorAccent"
+            android:padding="15dp"
+            android:text="删除"
+            android:layout_gravity="center_vertical|right"
+            android:textColor="#ffffff" />
+        <TextView
+            android:id="@+id/bianji"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@color/colorAccent"
+            android:padding="15dp"
+            android:text="编辑"
+            android:layout_gravity="center_vertical|right"
+            android:textColor="#ffffff" />
+    </LinearLayout>
+
+
+</android.support.v7.widget.CardView>
