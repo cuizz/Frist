@@ -43,8 +43,8 @@ public class MulRecyAdapter extends BaseMultiItemQuickAdapter<Photos,BaseViewHol
                         .getSystemService(Context.WINDOW_SERVICE);
                 int widths = wms.getDefaultDisplay().getWidth()/3;
                 int heights=widths/2+30;
-                TextView textView=(TextView)helper.getView(R.id.tv_desc);
-                ImageView imageView=(ImageView)helper.getView(R.id.leftimage);
+                TextView textView=helper.getView(R.id.tv_desc);
+                ImageView imageView=helper.getView(R.id.leftimage);
                 param.height=heights;
                 param.width=widths;
                 param.setMargins(0,10,0,10);
@@ -61,12 +61,12 @@ public class MulRecyAdapter extends BaseMultiItemQuickAdapter<Photos,BaseViewHol
                         .getSystemService(Context.WINDOW_SERVICE);
                 int width = wm.getDefaultDisplay().getWidth()/3-15;
                 int height=width/2+30;
-                ImageView imageViews=(ImageView)helper.getView(R.id.leftimage);
+                ImageView imageViews=helper.getView(R.id.leftimage);
                 params.height=height;
                 params.width=width;
                 params.setMargins(0,0,0,20);
-                ImageView imageView1=(ImageView)helper.getView(R.id.leftimage1);
-                ImageView imageView2=(ImageView)helper.getView(R.id.leftimage2);
+                ImageView imageView1=helper.getView(R.id.leftimage1);
+                ImageView imageView2=helper.getView(R.id.leftimage2);
                 imageViews.setLayoutParams(params);
                 imageView1.setLayoutParams(params);
                 imageView2.setLayoutParams(params);

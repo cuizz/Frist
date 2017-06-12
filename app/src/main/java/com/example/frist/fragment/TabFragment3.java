@@ -98,12 +98,12 @@ public class TabFragment3 extends BaseFragment implements BaseQuickAdapter.OnIte
         recyclerView.setLayoutManager(mLinearLayoutManager);
         // recyclerView.setHasFixedSize(true);
         // recyclerView.setNestedScrollingEnabled(false);
-        if (adapters == null) {
+       // if (adapters == null) {
             adapters = new QuickAdapter();
             recyclerView.setAdapter(adapters);
-        } else {
-            adapters.notifyDataSetChanged();
-        }
+       // } else {
+        //    adapters.notifyDataSetChanged();
+      //  }
         View view = LayoutInflater.from(getActivity()).inflate(R.layout.fragment3_head, null);
         checkbox=(CheckBox) view.findViewById(R.id.checkbox);
         all=(TextView)view.findViewById(R.id.all);
@@ -117,7 +117,7 @@ public class TabFragment3 extends BaseFragment implements BaseQuickAdapter.OnIte
         adapters.addHeaderView(view, 0);
         adapters.setOnItemChildClickListener(this);
         adapters.setOnItemClickListener(this);
-        adapters.bindToRecyclerView(recyclerView);
+        //adapters.bindToRecyclerView(recyclerView);
         checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {

@@ -17,7 +17,7 @@ public class RunErActivity extends TopBarBaseActivity implements View.OnClickLis
     CustomDialog dialog;
     @Override
     protected int getContentView() {
-        return R.layout.second_layout;
+        return R.layout.ceshi_head;
     }
 
     @Override

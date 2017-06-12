@@ -103,9 +103,10 @@ public class SecondActivity extends TopBarBaseActivity implements
                 break;
             case 1:
                 List<Photos> responsess=new Gson().fromJson(event.getContent(),new TypeToken<List<Photos>>(){}.getType());
-                //responses.addAll(0,responsess.get(0));
-                responses.add(0,responsess.get(0));
-                adapter.notifyDataSetChanged();
+                adapter.addData(responsess);
+                // View views=LayoutInflater.from(SecondActivity.this).inflate(R.layout.refresh_head,null);
+                // adapter.addFooterView(views,10);
+              //  adapter.addHeaderView(views,11);
                 swipeRefreshLayout.setRefreshing(false);
                 break;
             case 3:
@@ -194,6 +195,7 @@ public class SecondActivity extends TopBarBaseActivity implements
     public void onItemClick(BaseQuickAdapter adapters, View view, int position) {
         Photos photos=adapter.getData().get(position);
         String value=photos.getDatetime();
-        Utils.startActivity(this,TabActivity.class);
+        //Utils.startActivity(this,TabActivity.class);
+        Toast.makeText(this,"我点击了  "+position,Toast.LENGTH_SHORT).show();
     }
 }
