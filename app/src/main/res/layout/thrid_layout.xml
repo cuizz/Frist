@@ -65,8 +65,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:src="@drawable/app"
+        android:src="@drawable/ic_add"
         app:layout_anchor="@id/appbar"
-        app:layout_anchorGravity="bottom|end"></android.support.design.widget.FloatingActionButton>
+        app:layout_anchorGravity="bottom|end"/>
 
 </android.support.design.widget.CoordinatorLayout>

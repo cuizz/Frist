@@ -26,41 +26,41 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:background="@color/colorAccent"
+            android:background="@drawable/circle_shape"
             android:padding="15dp"
             android:text="全选"
             android:layout_gravity="center_vertical|right"
-            android:textColor="#ffffff" />
+            android:textColor="@color/colorAccent" />
         <TextView
             android:id="@+id/notall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:background="@color/colorAccent"
+            android:background="@drawable/circle_shape"
             android:padding="15dp"
             android:text="全不选"
             android:layout_gravity="center_vertical|right"
-            android:textColor="#ffffff" />
+            android:textColor="@color/colorAccent" />
         <TextView
             android:id="@+id/delect"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:background="@color/colorAccent"
+            android:background="@drawable/circle_shape"
             android:padding="15dp"
             android:text="删除"
             android:layout_gravity="center_vertical|right"
-            android:textColor="#ffffff" />
+            android:textColor="@color/colorAccent" />
         <TextView
             android:id="@+id/bianji"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:background="@color/colorAccent"
+            android:background="@drawable/circle_shape"
             android:padding="15dp"
             android:text="编辑"
             android:layout_gravity="center_vertical|right"
-            android:textColor="#ffffff" />
+            android:textColor="@color/colorAccent" />
     </LinearLayout>
 
 

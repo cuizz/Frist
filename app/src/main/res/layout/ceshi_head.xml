@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/gone"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
@@ -8,8 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="120dp"
         android:background="#fff">
-
-
 
         <TextView
             android:id="@+id/text"
@@ -48,11 +48,13 @@
         </LinearLayout>
 
     </RelativeLayout>
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="-40dp"
-        android:src="@drawable/app" />
-</LinearLayout>
+    <TextView
+        android:id="@+id/tishi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E5E5E5"
+        android:padding="10dp"
+        android:gravity="center"
+        android:layout_marginTop="-50dp"
+        android:text="您的红包被人抢了" />
+</RelativeLayout>
