@@ -18,6 +18,7 @@ import com.example.frist.bean.Student;
 import com.example.frist.bean.Teacher;
 import com.example.frist.view.CustomDialog;
 import com.example.frist.view.FromBottomPopwindow;
+import com.example.frist.view.MyView;
 
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
@@ -47,8 +48,10 @@ public class RunErActivity extends TopBarBaseActivity implements View.OnClickLis
     CustomDialog dialog;
     TextView tishi;
     List<Student>list=new ArrayList<>();
+    List<String>strings=new ArrayList<>();
     List<Photos>photos=new ArrayList<>();
     RecyclerView recyclerView;
+    MyView myView;
     @Override
     protected int getContentView() {
         return R.layout.ceshi_head;
