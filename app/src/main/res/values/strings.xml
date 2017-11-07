@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Frist</string>
     <string name="butter_knife">注解</string>
+    <string name="text_view">
+        <Data>
+  <![CDATA[今日已有<font color="#f0717e">1/font>人签到，
+    日榜单排在第<font color="#f0717e">1</font>名]]>
+</Data>
+    </string>
 </resources>

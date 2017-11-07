@@ -27,5 +27,10 @@
         android:title="section"
         android:icon="@drawable/ic_action_emo_angry"
         app:showAsAction="never|withText"/>
+    <item
+        android:id="@+id/itemDecoration"
+        android:title="itemDecoration"
+        android:icon="@drawable/ic_action_emo_angry"
+        app:showAsAction="never|withText"/>
 
 </menu>

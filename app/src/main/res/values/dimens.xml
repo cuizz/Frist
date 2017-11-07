@@ -45,4 +45,5 @@
     <dimen name="divider">0.1dp</dimen>
     <dimen name="leftmargin">10dp</dimen>
     <dimen name="rightmargin">10dp</dimen>
+    <dimen name="itemdecoration">0.1dp</dimen>
 </resources>

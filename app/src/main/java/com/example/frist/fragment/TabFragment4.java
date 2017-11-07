@@ -34,6 +34,7 @@ public class TabFragment4 extends BaseFragment{
         }
         pieView.setData(list);
         PathView pathView=(PathView)view.findViewById(R.id.pathView);
+
         oaAnimator= ObjectAnimator.ofFloat(pathView, "rotation", 0,360);
         oaAnimator.setDuration(5000);
         oaAnimator.start();

@@ -20,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.frist.activity.ItemDecorationActivity;
 import com.example.frist.activity.RunErActivity;
 import com.example.frist.view.AutoPopwindow;
 import com.example.frist.view.FromBottomPopwindow;
@@ -160,6 +161,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.section:
                         Utils.startActivity(MainActivity.this,ThirdActivity.class);
+                        break;
+                    case R.id.itemDecoration:
+                        Utils.startActivity(MainActivity.this,ItemDecorationActivity.class);
                         break;
                 }
                 return true;
