@@ -45,6 +45,9 @@
         <activity
             android:name=".activity.ItemDecorationActivity"
             android:theme="@style/FuTheme"/>
+        <activity
+            android:name=".activity.BehaviorActivity"
+            android:theme="@style/FuTheme"/>
 
         <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
