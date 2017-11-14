@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="city">
+        <item>山东</item>
+        <item>济南</item>
+        <item>聊城</item>
+        <item>青岛</item>
+        <item>潍坊</item>
+        <item>北京</item>
+        <item>上海</item>
+        <item>广州</item>
+        <item>深圳</item>
+        <item>南京</item>
+        <item>苏州</item>
+        <item>扬州</item>
+        <item>威海</item>
+        <item>日照</item>
+        <item>天津</item>
+        <item>沈阳</item>
+        <item>淄博</item>
+        <item>杭州</item>
+        <item>昆山</item>
+        <item>赵庄</item>
+        <item>临沂</item>
+        <item>哈尔滨</item>
+    </string-array>
+</resources>

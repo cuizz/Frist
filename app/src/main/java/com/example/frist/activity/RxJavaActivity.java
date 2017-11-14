@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.example.frist.R;
-import com.example.frist.adapter.RecycleAdapter;
 import com.example.frist.adapter.RecycleViewAdapter;
 import com.example.frist.bean.Photos;
 import com.example.frist.bean.Student;
@@ -20,18 +19,13 @@ import com.example.frist.view.CustomDialog;
 import com.example.frist.view.FromBottomPopwindow;
 import com.example.frist.view.MyView;
 
-import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import io.reactivex.BackpressureStrategy;
 import io.reactivex.Flowable;
-import io.reactivex.FlowableEmitter;
-import io.reactivex.FlowableOnSubscribe;
-import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.functions.BiFunction;
@@ -44,7 +38,7 @@ import io.reactivex.schedulers.Schedulers;
  * Created by Matthew_Chen on 2017/4/14.
  */
 
-public class RunErActivity extends TopBarBaseActivity implements View.OnClickListener,BaseQuickAdapter.OnItemClickListener{
+public class RxJavaActivity extends TopBarBaseActivity implements View.OnClickListener,BaseQuickAdapter.OnItemClickListener{
     CustomDialog dialog;
     TextView tishi;
     List<Student>list=new ArrayList<>();
@@ -108,13 +102,13 @@ public class RunErActivity extends TopBarBaseActivity implements View.OnClickLis
         setTopLeftButton(R.drawable.ic_arrow_back, new OnClickListener() {
             @Override
             public void onClick() {
-                RunErActivity.this.finish();
+                RxJavaActivity.this.finish();
             }
         });
         addTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FromBottomPopwindow popwindow=new FromBottomPopwindow(RunErActivity.this);
+                FromBottomPopwindow popwindow=new FromBottomPopwindow(RxJavaActivity.this);
                 popwindow.showPopupWindow();
                 ObjectAnimator translationUp = ObjectAnimator.ofFloat(tishi, "Y", 0, -100);
                 translationUp.setDuration(500);

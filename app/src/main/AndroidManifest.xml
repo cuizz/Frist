@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.RunErActivity"
+            android:name=".activity.RxJavaActivity"
             android:theme="@style/FuTheme"/>
         <activity
             android:name=".MainActivity"

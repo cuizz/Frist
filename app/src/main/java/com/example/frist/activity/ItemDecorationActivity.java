@@ -8,6 +8,8 @@ import com.example.frist.R;
 import com.example.frist.adapter.ItemDecorationAdapter;
 import com.example.frist.utils.MyDecoration;
 import com.example.frist.utils.RightLeftDecoration;
+import com.github.stuxuhai.jpinyin.PinyinFormat;
+import com.github.stuxuhai.jpinyin.PinyinHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +21,7 @@ import java.util.List;
 public class ItemDecorationActivity extends TopBarBaseActivity{
     private RecyclerView recyclerView;
     private List<String>data=new ArrayList<>();
+    private List<String>datas=new ArrayList<>();
     @Override
     protected int getContentView() {
         return R.layout.recycle_item;
@@ -27,22 +30,22 @@ public class ItemDecorationActivity extends TopBarBaseActivity{
     @Override
     protected void init(Bundle savedInstanceState) {
         recyclerView=(RecyclerView) findViewById(R.id.recyclerview);
-        data.add("asd");
-        data.add("acd");
-        data.add("bsd");
-        data.add("gsd");
-        data.add("gd");
-        data.add("jd");
-        data.add("fd");
-        data.add("md");
-        data.add("md");
-        data.add("hsd");
-        data.add("vsd");
-        data.add("hd");
-        data.add("ld");
+        String [] citys=getResources().getStringArray(R.array.city);
+        StringBuffer buffer=new StringBuffer();
+        for(String city:citys){
+            try {
+                String pinyin= PinyinHelper.convertToPinyinString(city, " ", PinyinFormat.WITHOUT_TONE);
+                buffer=buffer.append(pinyin);
+            }catch (Exception e){
+
+            }
+            datas.add(buffer.toString());
+            data.add(city);
+            buffer.replace(0,buffer.length(),"");
+        }
         RecyclerView.LayoutManager manager=new LinearLayoutManager(this);
         MyDecoration myDecoration=new MyDecoration(this);
-        RightLeftDecoration rightLeftDecoration=new RightLeftDecoration(this);
+        RightLeftDecoration rightLeftDecoration=new RightLeftDecoration(this,datas);
         recyclerView.setLayoutManager(manager);
         recyclerView.addItemDecoration(myDecoration);
         recyclerView.addItemDecoration(rightLeftDecoration);
