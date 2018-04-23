@@ -10,7 +10,6 @@ public class Singleton {
      * 对保存实例的变量添加volitile的修饰
      */
     public volatile static Singleton singleton=null;
-
     public static Singleton getInstance(){
         //先检查实例是否存在，如果不存在才进入下面的同步块
         if (singleton==null){

@@ -18,6 +18,7 @@ import android.widget.TextView;
 import com.example.frist.R;
 import com.example.frist.adapter.ItemDecorationAdapter;
 import com.example.frist.utils.DataUtil;
+import com.example.frist.utils.LeakModule;
 
 /**
  * Created by Matthew_Chen on 2017/4/14.
@@ -36,6 +37,7 @@ public  class BehaviorActivity extends AppCompatActivity implements View.OnClick
         recyclerView = (RecyclerView) findViewById(R.id.viewContent);
         button = (Button) findViewById(R.id.button);
         button.setOnClickListener(this);
+        //LeakModule.getInstance(this).setText(toolbar);
         toolbar.setTitle("behavior");
         //初始化设置 Toolbar
         ActionBar actionBar = getSupportActionBar();

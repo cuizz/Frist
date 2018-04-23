@@ -23,6 +23,7 @@ import android.widget.Toast;
 import com.example.frist.activity.BehaviorActivity;
 import com.example.frist.activity.ItemDecorationActivity;
 import com.example.frist.activity.RxJavaActivity;
+import com.example.frist.utils.LeakModule;
 import com.example.frist.view.AutoPopwindow;
 import com.example.frist.view.FromBottomPopwindow;
 import com.example.frist.view.ScalePopwindow;
